@@ -1,0 +1,35 @@
+body {
+background: #E5E5E5
+}
+
+header {
+    position: absolute;
+left: 15.37%;
+right: 16.8%;
+top: 26.67%;
+bottom: 0.47%;
+
+background: url(ig.png);
+}
+
+.h1{
+    position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 54.88%;
+
+/* Texto normal (16) */
+font-family: Open Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 25px;
+/* or 156% */
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+
+
