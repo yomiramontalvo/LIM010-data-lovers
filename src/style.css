@@ -1,61 +1,222 @@
-@media screen and (max-width:650px ){
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@media screen and (min-width:375px ){
 body {
-width: 375px;
-height: auto;
-background: #E3FFFD;
+background: #FFFFFF;
+margin:auto;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
-#Logo{
+.backgroundLogin {
+display:flex;
+width: 335px;
+height: 502px;
+padding:82px 20px;
+justify-content:center;
+flex-direction: column;
+}
+
+.AllLogo {
+display: flex;
+width: 221.15px;
+height:136px;
+padding-left:57px;
+padding-right:57px ;
+justify-content:center;
+flex-direction: column;
+}
+
+.Logo {
 width: 104px;
 height: 89px;
-left: 136px;
-top: 44px;
-background: url(Logo.png);}
-
-header {
-    position: absolute;
-left: 15.37%;
-right: 16.8%;
-top: 26.67%;
-bottom: 0.47%;
+margin:auto;
+object-fit: cover;
 }
-.loge{
-    margin: 0 auto;
-    background: rgb(142, 205, 230);
-    width: 260px;
-    padding-left: 50px;
-    padding-right: 50px;
 
+#Login {
+width: 221.15px;
+height: 60px;
+font-family: 'Open Sans', sans-serif;
+font-weight: 600;
+font-style: regular;
+font-size: 35px;
+color: #333333;
+text-align: center;
+}
+
+form {
+width: 335px;
+height: 210px;
+margin:24px 0px 133px;
+}
+
+.register {
+width: 335px;
+height: 82px;
+left: 20px;
+top: 242px;
+margin:0px 0px 12px;
+}
 
 h2 {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 25px;
+display: flex;
+align-items: center;
+color: #000000;    
+}
+.writeuser {
+width: 335px;
+height:45px;
+bottom: 0%;
+background: #7BE4EA;
+opacity: 0.5;
+border-radius: 20px;
+border:#7BE4EA;
+}
+    
+.buttonentry {
+padding: 70px 0px 0px;
+}
+
+.buttonLogin {
+width: 335px;
+height: 50px;
+left: 20px;
+top: 500px;
+bottom: 0%;
+background: #0071BC;
+border-radius: 5px;
+border:#0071BC;
+font-family: 'Open Sans', sans-serif;
+font-style: normal;
+font-weight: 800;
+font-size: 15px;
+line-height: 1px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #FFFFFF;
+justify-content:center;
+}
+}
+
+@media screen and (min-width:1200px ){
+    body {
+    background-image:url("img/backgroundLogin1.jpg");
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    }
+   /* .masterLogin {
+    width: 460px;
+    height: 575px;
+    background: #FFFFFF;
+    }*/
+
+    .backgroundLogin {
+    display:flex;
+    width: 335px;
+    height: 502px;
+    padding:82px 20px;
+    justify-content:center;
+    flex-direction: column;
+    }
+    
+    .AllLogo {
+    display: flex;
+    width: 221.15px;
+    height:136px;
+    padding-left:57px;
+    padding-right:57px ;
+    justify-content:center;
+    flex-direction: column;
+    }
+    
+    .Logo {
+    width: 104px;
+    height: 89px;
+    margin:auto;
+    object-fit: cover;
+    }
+    
+    #Login {
+    width: 221.15px;
+    height: 60px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-style: regular;
+    font-size: 35px;
+    color: #333333;
+    text-align: center;
+    }
+    
+    form {
+    width: 335px;
+    height: 210px;
+    margin:24px 0px 133px;
+    }
+    
+    .register {
+    width: 335px;
+    height: 82px;
+    left: 20px;
+    top: 242px;
+    margin:0px 0px 12px;
+    }
+    
+    h2 {
+    font-family: 'Open Sans';
     font-style: normal;
     font-weight: normal;
-    font-size: 30px;
+    font-size: 16px;
     line-height: 25px;
-    color: #000000;
-}
+    display: flex;
+    align-items: center;
+    color: #000000;    
+    }
+    .writeuser {
+    width: 335px;
+    height:45px;
+    bottom: 0%;
+    background: #7BE4EA;
+    opacity: 0.5;
+    border-radius: 20px;
+    border:#7BE4EA;
+    }
+        
+    .buttonentry {
+    padding: 70px 0px 0px;
+    }
+    
+    .buttonLogin {
+    width: 335px;
+    height: 50px;
+    left: 20px;
+    top: 500px;
+    bottom: 0%;
+    background: #0071BC;
+    border-radius: 5px;
+    border:#0071BC;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 1px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    justify-content:center;
+    }
+    
+    
 
-input{
-    background: #FFFFFF;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    line-height: 22px;
-}
 
-.button{
-     color: #ffffff;
-     background: #3897F0;
-     border: 3px solid #ffffff;
-     font-size: 12px;
-     font-family:'Merienda', cursive;
-    height: 42px;
-} 
 
-a{
-    color: #100BFF;
-    align-self: flex-end;
-    line-height: 25px;
-    margin-bottom: 12px;
 }
- 
- 

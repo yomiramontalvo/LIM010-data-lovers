@@ -1,6 +1,6 @@
 /* Manejo del DOM */
-const enter = document.getElementById('enter');
-enter.addEventListener('click', () => {
+const ingresar = document.getElementById('ingresar');
+ingresar.addEventListener('click', () => {
     const write = document.getElementById('write').value;
     const pass = document.getElementById('pass').value;
     if (write == "LABORATORIA" && pass == "LABORATORIA") {
