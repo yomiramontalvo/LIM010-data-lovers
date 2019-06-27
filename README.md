@@ -18,7 +18,9 @@
 
 ## Resumen del Proyecto
 
-El proyecto se basará en la necesidad del usuario de obtener  un análisis  de determinado tema, por ello a través de los indicadores del Banco Mundial podrá obtener un resultado. Para ingresar se tendrá que logear con un usuario y contraseña “LABORATORIA”
+El proyecto “Latin Data” busca facilitar el acceso a datos e indicadores de países Latinoamericanos  con la finalidad de que por medio de esta plataforma, el usuario consiga la eficiencia en su búsqueda. 
+El ingreso a esta plataforma se realizará a través del usuario y contraseña “LABORATORIA”.
+
 
 ## Imagen final del Proyecto
 
@@ -39,3 +41,16 @@ Diariamente se requieren de datos para conocimiento, análisis y toma de decisio
 ### Resumen del Feedback (mejoras a realizar)
 
 ### Imagen y link del prototipo en Figma
+
+A través del siguiente Link podrán obtener el figma de la Primera Historia https://www.figma.com/file/5RWdlRj8dgGPSW0tP6CL7Z/LatinData?node-id=1%3A2
+
+                   Primera Historia (Login en Web ) 
+
+![Imagen 1][1] 
+
+                   Primera Historia (Login en Movil ) 
+
+![Imagen 2][2]
+
+ [1]: Historia1.web.PNG 
+ [2]: Historia1.mobile.PNG "scaphandre" 
