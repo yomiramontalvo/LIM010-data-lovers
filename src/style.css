@@ -399,6 +399,16 @@ width:320px ;
         color: #0071BC;
     }
     
+    .backgroundindicators {
+        display:flex;
+        justify-content: left;
+        padding:20px;
+    }
+
+    #screencountry ul a{
+        text-align: justify;
+    }
+
     .titletypeindicator {
         font-family: 'Open Sans', sans-serif;
         font-style: regular;
@@ -413,7 +423,7 @@ width:320px ;
         color:#333333;
     }
     .overview {
-        width:90% ;
+        width:30% ;
         }
 
 }

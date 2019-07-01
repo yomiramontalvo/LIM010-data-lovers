@@ -2,7 +2,7 @@
 /* Acá va tu código */
 let screenLogin = document.getElementById('botonLogin');
 let screenSelectCountry = document.getElementById('screenSelectCountry');
-let screenPeru = document.getElementById('screenPeru');
+let screencountry = document.getElementById('screencountry');
 /*let screenAllIndicatorsPeru = document.getElementById('screenAllIndicatorsPeru');
 let screenOneIndicatorPeru = document.getElementById('screenOneIndicatorPeru');
 let screenChile = document.getElementById('screenChile');
@@ -18,7 +18,7 @@ let screenOneIndicatorMexico = document.getElementById('screenOneIndicatorBrasil
 const hideallscreens = () => {
     screenLogin.classList.remove('show');
     screenSelectCountry.classList.remove('show');
-    screenPeru.classList.remove('show');
+    screencountry.classList.remove('show');
     /*screenAllIndicatorsPeru.classList.remove('show');
     screenOneIndicatorPeru.classList.remove('show');
     screenChile.classList.remove('show');
@@ -32,7 +32,7 @@ const hideallscreens = () => {
     screenOneIndicatorMexico.classList.remove('show');*/
     screenLogin.classList.add('hide');
     screenSelectCountry.classList.add('hide');
-    screenPeru.classList.add('hide');
+    screencountry.classList.add('hide');
    /* screenAllIndicatorsPeru.classList.add('hide');
     screenOneIndicatorPeru.classList.add('hide');
     screenChile.classList.add('hide');
@@ -55,9 +55,9 @@ const showscreenSelectCountry = () => {
     screenSelectCountry.classList.add('show');
 }
 
-const showscreenPeru = () => {
+const showscreencountry = () => {
     hideallscreens();
-    screenPeru.classList.add('show');
+    screencountry.classList.add('show');
 }
 /*
 const showscreenAllIndicatorsPeru = () => {   
@@ -148,7 +148,7 @@ let clickPerú = document.getElementById('peru');
 const indicatorsPeru=WORLDBANK.PER.indicators;
 
 clickPerú.addEventListener('click', () => {
-    showscreenPeru();
+    showscreencountry();
     screenSelectCountry.classList.add('show');
     console.log(indicatorsPeru);
     indicatorsPeru.forEach(function(element) {
