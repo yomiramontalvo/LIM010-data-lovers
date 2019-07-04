@@ -1,6 +1,7 @@
 google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawBasic);
 
+
 let matrizIndicator=new Array (Object.entries(WORLDBANK.PER.indicators[0].data));
 let inmatriz=matrizIndicator[0];
 

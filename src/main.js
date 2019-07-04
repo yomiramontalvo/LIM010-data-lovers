@@ -3,48 +3,18 @@
 let screenLogin = document.getElementById('botonLogin');
 let screenSelectCountry = document.getElementById('screenSelectCountry');
 let screencountry = document.getElementById('screencountry');
-/*let screenAllIndicatorsPeru = document.getElementById('screenAllIndicatorsPeru');
-let screenOneIndicatorPeru = document.getElementById('screenOneIndicatorPeru');
-let screenChile = document.getElementById('screenChile');
-let screenAllIndicatorsChile = document.getElementById('screenAllIndicatorsChile');
-let screenOneIndicatorChile = document.getElementById('screenOneIndicatorChile');
-let screenBrasil = document.getElementById('screenBrasil');
-let screenAllIndicatorsBrasil = document.getElementById('screenAllIndicatorsPeru');
-let screenOneIndicatorBrasil = document.getElementById('screenOneIndicatorBrasil');
-let screenMexico = document.getElementById('screenBrasil');
-let screenAllIndicatorsMexico = document.getElementById('screenAllIndicatorsPeru');
-let screenOneIndicatorMexico = document.getElementById('screenOneIndicatorBrasil');*/
+let screenchart_div = document.getElementById('chart_div');
 
 const hideallscreens = () => {
   screenLogin.classList.remove('show');
   screenSelectCountry.classList.remove('show');
   screencountry.classList.remove('show');
-  /*screenAllIndicatorsPeru.classList.remove('show');
-  screenOneIndicatorPeru.classList.remove('show');
-  screenChile.classList.remove('show');
-  screenAllIndicatorsChile.classList.remove('show');
-  screenOneIndicatorChile.classList.remove('show');
-  screenBrasil.classList.remove('show');
-  screenAllIndicatorsBrasil.classList.remove('show');
-  screenOneIndicatorBrasil.classList.remove('show');
-  screenMexico.classList.remove('show');
-  screenAllIndicatorsMexico.classList.remove('show');
-  screenOneIndicatorMexico.classList.remove('show');*/
+  screenchart_div.classList.remove('show');
   screenLogin.classList.add('hide');
   screenSelectCountry.classList.add('hide');
   screencountry.classList.add('hide');
-   /* screenAllIndicatorsPeru.classList.add('hide');
-    screenOneIndicatorPeru.classList.add('hide');
-    screenChile.classList.add('hide');
-    screenAllIndicatorsChile.classList.add('hide');
-    screenOneIndicatorChile.classList.add('hide');
-    screenBrasil.classList.add('hide');
-    screenAllIndicatorsBrasil.classList.add('hide');
-    screenOneIndicatorBrasil.classList.add('hide');
-    screenMexico.classList.add('hide');
-    screenAllIndicatorsMexico.classList.add('hide');
-    screenOneIndicatorMexico.classList.add('hide');
-*/}
+  screenchart_div.classList.add('hide');
+}
 const showscreenLogin = () => {
   hideallscreens();
   screenLogin.classList.add('show');
@@ -59,57 +29,12 @@ const showscreencountry = () => {
   hideallscreens();
   screencountry.classList.add('show');
 }
-/*
-const showscreenAllIndicatorsPeru = () => {   
-    hideallscreens();
-    screenAllIndicatorsPeru.classList.add('show');
 
-}
-const showscreenOneIndicatorPeru = () => {
+const showscreenchart_div = () => {   
     hideallscreens();
-    screenOneIndicatorPeru.classList.add('show'); 
-}
-const showscreenChile = () => {
-    hideallscreens();
-    screenChile.classList.add('show');
-}
-const showscreenAllIndicatorsChile = () => {    
-    hideallscreens();
-    screenAllIndicatorsChile.classList.add('show');
-
-}
-const showscreenOneIndicatorChile = () => {
-    hideallscreens();
-    screenOneIndicatorChile.classList.add('show'); 
+   screenchart_div.classList.add('show');
 }
 
-const showscreenBrasil = () => {
-    hideallscreens();
-    screenBrasil.classList.add('show');
-}
-const showscreenAllIndicatorsBrasil = () => {    
-    hideallscreens();
-    screenAllIndicatorsBrasil.classList.add('show');
-
-}
-const showscreenOneIndicatorBrasil = () => {
-    hideallscreens();
-    screenOneIndicatorBrasil.classList.add('show'); 
-}
-
-const showscreenMexico = () => {
-    hideallscreens();
-    screenMexico.classList.add('show');
-}
-const showscreenAllIndicatorsMexico = () => {    
-    hideallscreens();
-    screenAllIndicatorsMexico.classList.add('show');
-
-}
-const showscreenOneIndicatorMexico = () => {
-    hideallscreens();
-    screenOneIndicatorMexico.classList.add('show'); 
-}*/
 
 /*Login*/
 let EnterLogin = document.getElementById('EnterLogin');
@@ -153,12 +78,6 @@ clickPerú.addEventListener('click', () => {
   addLiSL(); addLiSE(); addLiHD(); addLiIC(); addLiMS(); addLiSG(); addLiSP(); addLiSH(); addLiper();
 });
 
-/*let clickindicator = document.getElementsByTagName('select').id;
-
-clickindicator.addEventListener('click',() => {
- alert(clickindicator.id);
-});
-*/
 let SearchIndexCode = WORLDBANK.PER.indicators;
 
 let addLiSL = () => {
@@ -175,10 +94,12 @@ let addLiSL = () => {
         a.innerHTML = indicatorname;
         li.id = indicatorname;
         a.id = indicatorcode;
+        a.href = '#';
         a.name = newindex.toString();
         /*li.innerHTML=indicatorname;*/
         document.getElementById('listSL').appendChild(li);
         document.getElementById(indicatorname).appendChild(a);
+
       }
     });
   });
@@ -383,5 +304,17 @@ indicatordataperu.forEach((element, ind) => {
   }
 });
 
+/*Office hours*/
+document.getElementById('listSL').addEventListener('click', (e) => {
+ console.log(e.target.id);
+ codeindicatortable=e.target.id;
+ SearchIndexCode.forEach((elem, indi) => {
+  if (SearchIndexCode[indi].indicatorCode === codeindicatortable) {
+   let indextable=indi;
+  }
+});
 
 
+ /*document.getElementById('main').innerHTML = '';*/
+ screenchart_div.classList.add('show');
+});
