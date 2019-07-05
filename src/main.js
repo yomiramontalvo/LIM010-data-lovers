@@ -311,10 +311,11 @@ document.getElementById('listSL').addEventListener('click', (e) => {
  SearchIndexCode.forEach((elem, indi) => {
   if (SearchIndexCode[indi].indicatorCode === codeindicatortable) {
    let indextable=indi;
+   let nameindicator=SearchIndexCode[indi].indicatorName;
+   document.getElementById('indicatorName').innerHTML=nameindicator;
+   drawBasic(indextable);
   }
 });
-
-
  /*document.getElementById('main').innerHTML = '';*/
  screenchart_div.classList.add('show');
 });
