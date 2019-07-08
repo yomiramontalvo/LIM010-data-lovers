@@ -313,7 +313,8 @@ document.getElementById('listSL').addEventListener('click', (e) => {
    let indextable=indi;
    let nameindicator=SearchIndexCode[indi].indicatorName;
    document.getElementById('indicatorName').innerHTML=nameindicator;
-   drawBasic(indextable);
+   drawBasic(indextable); drawBasic1(indextable); prom(indextable); 
+   document.getElementById('prom').innerHTML='El promedio es '+ prom(indextable);
   }
 });
  /*document.getElementById('main').innerHTML = '';*/
