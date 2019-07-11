@@ -6,12 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
- 
 </head>
 
 <body id="body" class="bodyLogin">
-  <header id="Head" class="head  hide">Latin Data</header>
-  <main id="main">
+
+  <header id="Head" class="hide">
+      <section id="screenSelectCountry" class="hide">
+          <div id="countries" class="hide">
+           <ul>
+              <li id="peru" value="PER">Perú</li>
+              <li id="chile" value="CHL">Chile</li>
+              <li id="mexico" value="MEX">México</li>
+              <li id="brasil" value="BRA">Brasil</li>
+            </ul>
+          </div>
+        </section>
+    <div class="head" >Latin Data</div>
+    <img class="logohead" src="img/Logo.png"/></header>
+
     <!---ScreenLogin-->
     <section id="botonLogin" class="masterLogin">
       <section class="backgroundLogin">
@@ -31,67 +43,76 @@
           <section class="buttonentry">
             <input class="buttonLogin" type="button" value="INGRESAR" id="EnterLogin">
           </section>
-          <!-- <a href="">¿Olvidaste Contraseña?</a><br/>
+          <!-- <a href="">¿Olvidaste Contraseña?</a></br>
           <a href="">¿No tienes una cuenta?<strong> Registrate</strong></a><br/></a><br/>-->
           <p id="mistakeLogin" class="error"></p>
         </form>
       </section>
     </section>
-<!---ScreenSelectCountry-->
-    <section id="screenSelectCountry"  class="hide">
-      <div id="countries">
-       <ul>
-         <li  id="peru" value="PER">Perú</li>
-         <li  id="chile" value="CHL">Chile</li>
-         <li  id="mexico" value="MEX">México</li>
-         <li id="brasil" value="BRA">Brasil</li>
-       </ul>
+
+    <main id="main">
+    <div id="cont">
+      <div class="sli">
+        <slider id="presentation" class="hide">
+          <slide>
+          </slide>
+          <slide>
+          </slide>
+          <slide>
+          </slide>
+          <slide>
+          </slide>
+
+        </slider>
       </div>
-    </section>
-
-<!---ScreenSelectCountry-->
-<section  id="screenindicatorcountries" class="backgroundindicators">
-    <section id="screencountry" class="hide overview">
-     <div id="foranclas">
-       <h class="titleindicators">Indicadores</h><br/><br/>
-       <h class="titletypeindicator">Empleo</h><br/><br/>
-         <div>
-           <ul id="listSL">
-
-           </ul>
-         </div><br/>    
-      <h class="titletypeindicator">Desarrollo Social</h><br/><br/>
-         <ul id="listHD" > 
-         </ul><br/>
-      <h class="titletypeindicator">Género</h><br/><br/>
-         <ul id="listSG">  
-         </ul><br/>
-      <h class="titletypeindicator">Educación</h><br/><br/>
-         <ul id="listSE">
-         </ul><br/>
-      <h class="titletypeindicator">Población</h><br/><br/>
-         <ul id="listSP">
-         </ul><br/><br/>   
-       <h class="titletypeindicator">Sector Privado</h><br/><br/>
-          <ul id="listIC" > 
-          </ul><br/>
-       <h class="titletypeindicator">Salud</h><br/><br/>
-          <ul id="listSH">  
-          </ul><br/>
-       <h class="titletypeindicator">Protección Social</h><br/><br/>
-          <ul id="listper">
-          </ul><br/>
-       <h class="titletypeindicator">Sector Público</h><br/><br/>
-          <ul id="listMS">
-          </ul><br/><br/>
-
     </div>
-    <div><h id="indicatorName"></h></div><br/>
-    <div id="chart_div"></div>
-    <div id="orderchart_div"></div>
-    <div id="prom"></div>
-  </section>
-    </section>
+    <section class="backgroundindicators">
+      <section id="screencountry" class="hide">
+        <section class="buttonindicator">
+        <a class="titleindicators">Indicadores</a>
+      </section> 
+        <div class="mainmenu">
+          <div class="menu">
+          <ul>
+          <li><a class="titletypeindicator" id="Empleo" href="#">Empleo</a>
+            <ul id="listSL" class="hide">
+              </ul></li>
+          <li><a class="titletypeindicator" id="Desarrollo Social" href="#">Desarrollo Social</a></li>
+          <ul id="listHD">
+          </ul>
+          <li><a class="titletypeindicator" id="genero" href="#">Género</a></li>
+          <ul id="listSG">
+          </ul>
+         <li><a class="titletypeindicator" id="educación" href="#">Educación</a></li>
+          <ul id="listSE">
+          </ul>
+         <li><a class="titletypeindicator" id="poblacion" href="#">Población</a></li>
+          <ul id="listSP">
+          </ul>
+          <li><a class="titletypeindicator" id="sectorprivado" href="#">Sector Privado</a></li>
+          <ul id="listIC">
+          </ul>
+          <li><a class="titletypeindicator" id="salud" href="#">Salud</a></li>
+          <ul id="listSH">
+          </ul>
+          <li><a class="titletypeindicator" id="proteccionsocial" href="#">Protección Social</a></li>
+          <ul id="listper">
+          </ul>
+          <li><a class="titletypeindicator" id="sector publico" href="#">Sector Público</a></li>
+          <ul id="listMS">
+          </ul>
+        </ul>
+      </div>
+    </div>
+        <div>
+          <h id="indicatorName"></h>
+        </div><br />
+        <div id="chart" class="hide"></div>
+        <div id="orderchart_div"></div>
+        <div id="prom"></div>
+      </section>
+       </section>
+  <!--  </section>-->
 
   </main>
   <footer></footer>

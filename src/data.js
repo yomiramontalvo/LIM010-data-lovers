@@ -1,17 +1,7 @@
 google.charts.load('current', { packages: ['corechart', 'line'] });
-google.charts.setOnLoadCallback(drawBasic);
-
-/*let useindex = (number) => {
-let matrizIndicator=new Array (Object.entries(WORLDBANK.PER.indicators[number].data));
-let inmatriz=matrizIndicator[0];
-
-inmatriz.forEach(function(ele,ind) {
-inmatriz[ind][0]=parseFloat(inmatriz[ind][0]);
-inmatriz[ind][1]=parseFloat(inmatriz[ind][1]);
-console.log(number);
-});}*/
-
-function drawBasic(number) {
+/*google.charts.setOnLoadCallback(drawBasic);
+*/
+function drawBasic2(number) {
   let matrizIndicator = new Array(Object.entries(WORLDBANK.PER.indicators[number].data));
   let inmatriz = matrizIndicator[0];
   inmatriz.forEach(function (ele, ind) {
@@ -35,9 +25,9 @@ function drawBasic(number) {
     }
   };
 
-  var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+  var chartnormal = new google.visualization.LineChart(document.getElementById('chart'));
 
-  chart.draw(data, options);
+  chartnormal.draw(data, options);
 }
 
 function drawBasic1(number) {
@@ -64,19 +54,6 @@ inmatrizorder[ind][0]=inmatrizorder[ind][1];
 inmatrizorder[ind][1]=save;
 });
  
-  
- /*inmatrizorder.forEach(function (ele,ind){
-   inmatrizorder.sort()
-    for (let i=ind+1;i<=inmatrizorder.lenght;i++){
-      if(inmatrizorder[ind][1]<inmatrizorder[i][1]){
-      let saveorder= new Array (inmatrizorder[ind]);  
-        inmatrizorder[ind][0]=inmatrizorder[i][0];
-        inmatrizorder[ind][1]=inmatrizorder[i][1];
-        inmatrizorder[i]=saveorder;
-      }
-    }
- });*/
-
   var data = new google.visualization.DataTable();
   data.addColumn('number', '% o escala');
   data.addColumn('number', 'X');
@@ -92,9 +69,9 @@ inmatrizorder[ind][1]=save;
     }
   };
 
-  var chart1 = new google.visualization.LineChart(document.getElementById('orderchart_div'));
+  var chartorder = new google.visualization.LineChart(document.getElementById('orderchart_div'));
 
-  chart1.draw(data, options);
+  chartorder.draw(data, options);
 }
 
 function prom(number){

@@ -2,18 +2,24 @@
 /* Acá va tu código */
 let screenLogin = document.getElementById('botonLogin');
 let screenSelectCountry = document.getElementById('screenSelectCountry');
+let screenpresentation = document.getElementById('presentation');
 let screencountry = document.getElementById('screencountry');
-let screenchart_div = document.getElementById('chart_div');
+let screenchart = document.getElementById('chart');
+let screenempleo=document.getElementById('listSL');
 
 const hideallscreens = () => {
   screenLogin.classList.remove('show');
   screenSelectCountry.classList.remove('show');
   screencountry.classList.remove('show');
-  screenchart_div.classList.remove('show');
+  screenchart.classList.remove('show');
+  screenempleo.classList.remove('show');
+  screenpresentation.classList.remove('show');
   screenLogin.classList.add('hide');
   screenSelectCountry.classList.add('hide');
   screencountry.classList.add('hide');
-  screenchart_div.classList.add('hide');
+  screenchart.classList.add('hide');
+  screenempleo.classList.add('hide');
+  screenpresentation.classList.add('hide');
 }
 const showscreenLogin = () => {
   hideallscreens();
@@ -30,11 +36,22 @@ const showscreencountry = () => {
   screencountry.classList.add('show');
 }
 
-const showscreenchart_div = () => {   
+const showscreenchart = () => {   
     hideallscreens();
-   screenchart_div.classList.add('show');
+   screenchart.classList.add('show');
 }
 
+const showscreenempleo = () => {   
+  hideallscreens();
+  screenSelectCountry.classList.add('show');
+  screencountry.classList.add('show');
+  screenempleo.classList.add('show');
+}
+const showscreenpresentation = () => {   
+  hideallscreens();
+  screenSelectCountry.classList.add('show');
+  screenpresentation.classList.add('show');
+}
 
 /*Login*/
 let EnterLogin = document.getElementById('EnterLogin');
@@ -60,6 +77,7 @@ EnterLogin.addEventListener('click', () => {
     document.getElementById('body').classList.remove('bodyLogin');
     document.getElementById('Head').classList.remove('hide');
     showscreenSelectCountry();
+    showscreenpresentation();
 
   }
   else {
@@ -69,54 +87,46 @@ EnterLogin.addEventListener('click', () => {
   }
 });
 
-let clickPerú = document.getElementById('peru');
-const indicatorsPeru = WORLDBANK.PER.indicators;
 
-clickPerú.addEventListener('click', () => {
-  showscreencountry();
-  screenSelectCountry.classList.add('show');
-  addLiSL(); addLiSE(); addLiHD(); addLiIC(); addLiMS(); addLiSG(); addLiSP(); addLiSH(); addLiper();
+let SearchIndexCodePeru = WORLDBANK.PER.indicators;
+
+const searching=(indicatorname,indicatorcode,type,country)=>{
+  country.forEach((elem, indi) => {
+    if (country[indi].indicatorCode === indicatorcode) {
+      let newindex = indi;
+     console.log(newindex.toString());
+      let li = document.createElement('li');
+      let a = document.createElement('a');
+      a.innerHTML = indicatorname;
+      li.id = indicatorname;
+      a.id = indicatorcode;
+      a.href = '#';
+      a.name = newindex.toString();
+      /*li.innerHTML=indicatorname;*/
+      document.getElementById(type).appendChild(li);
+      document.getElementById(indicatorname).appendChild(a);
+    }
+  });
+}
+
+document.getElementById('Empleo').addEventListener('click',()=>{
+  showscreenempleo();
+  screenpresentation.classList.add('show');
 });
 
-let SearchIndexCode = WORLDBANK.PER.indicators;
-
-let addLiSL = () => {
+let addliSL=()=>{
   arrSLcodeindic.forEach(function (ele, ind) {
-    let indicatorname = arrSLnameindic[ind];
-    let indicatorcode = arrSLcodeindic[ind];
-
-    SearchIndexCode.forEach((elem, indi) => {
-      if (SearchIndexCode[indi].indicatorCode === indicatorcode) {
-        let newindex = indi;
-       console.log(newindex.toString());
-        let li = document.createElement('li');
-        let a = document.createElement('a');
-        a.innerHTML = indicatorname;
-        li.id = indicatorname;
-        a.id = indicatorcode;
-        a.href = '#';
-        a.name = newindex.toString();
-        /*li.innerHTML=indicatorname;*/
-        document.getElementById('listSL').appendChild(li);
-        document.getElementById(indicatorname).appendChild(a);
-
-      }
-    });
+  let indicatorname = arrSLnameindic[ind];
+  let indicatorcode = arrSLcodeindic[ind];
+searching(indicatorname,indicatorcode,'listSL',SearchIndexCodePeru);
   });
-};
+}
 
 let addLiSE = () => {
   arrSEcodeindic.forEach(function (ele, ind) {
     let indicatorname = arrSEnameindic[ind];
     let indicatorcode = arrSEcodeindic[ind];
-    let li = document.createElement('li');
-    let a = document.createElement('a');
-    a.innerHTML = indicatorname;
-    li.id = indicatorname;
-    a.id = indicatorcode;
-    /*li.innerHTML=indicatorname;*/
-    document.getElementById('listSE').appendChild(li);
-    document.getElementById(indicatorname).appendChild(a);
+    searching(indicatorname,indicatorcode,'listSE',SearchIndexCodePeru); 
   });
 };
 
@@ -124,14 +134,7 @@ let addLiHD = () => {
   arrHDcodeindic.forEach(function (ele, ind) {
     let indicatorname = arrHDnameindic[ind];
     let indicatorcode = arrHDcodeindic[ind];
-    let li = document.createElement('li');
-    let a = document.createElement('a');
-    a.innerHTML = indicatorname;
-    li.id = indicatorname;
-    a.id = indicatorcode;
-    /*li.innerHTML=indicatorname;*/
-    document.getElementById('listHD').appendChild(li);
-    document.getElementById(indicatorname).appendChild(a);
+    searching(indicatorname,indicatorcode,'listHD',SearchIndexCodePeru);
   });
 };
 
@@ -140,14 +143,7 @@ let addLiSG = () => {
   arrSGcodeindic.forEach(function (ele, ind) {
     let indicatorname = arrSGnameindic[ind];
     let indicatorcode = arrSGcodeindic[ind];
-    let li = document.createElement('li');
-    let a = document.createElement('a');
-    a.innerHTML = indicatorname;
-    li.id = indicatorname;
-    a.id = indicatorcode;
-    /*li.innerHTML=indicatorname;*/
-    document.getElementById('listSG').appendChild(li);
-    document.getElementById(indicatorname).appendChild(a);
+    searching(indicatorname,indicatorcode,'listSG',SearchIndexCodePeru);
   });
 };
 
@@ -155,14 +151,7 @@ let addLiSP = () => {
   arrSPcodeindic.forEach(function (ele, ind) {
     let indicatorname = arrSPnameindic[ind];
     let indicatorcode = arrSPcodeindic[ind];
-    let li = document.createElement('li');
-    let a = document.createElement('a');
-    a.innerHTML = indicatorname;
-    li.id = indicatorname;
-    a.id = indicatorcode;
-    /*li.innerHTML=indicatorname;*/
-    document.getElementById('listSP').appendChild(li);
-    document.getElementById(indicatorname).appendChild(a);
+    searching(indicatorname,indicatorcode,'listSP',SearchIndexCodePeru);
   });
 };
 
@@ -170,14 +159,7 @@ let addLiIC = () => {
   arrICcodeindic.forEach(function (ele, ind) {
     let indicatorname = arrICnameindic[ind];
     let indicatorcode = arrICcodeindic[ind];
-    let li = document.createElement('li');
-    let a = document.createElement('a');
-    a.innerHTML = indicatorname;
-    li.id = indicatorname;
-    a.id = indicatorcode;
-    /*li.innerHTML=indicatorname;*/
-    document.getElementById('listIC').appendChild(li);
-    document.getElementById(indicatorname).appendChild(a);
+    searching(indicatorname,indicatorcode,'listIC',SearchIndexCodePeru);
   });
 };
 
@@ -185,28 +167,14 @@ let addLiper = () => {
   arrpercodeindic.forEach(function (ele, ind) {
     let indicatorname = arrpernameindic[ind];
     let indicatorcode = arrpercodeindic[ind];
-    let li = document.createElement('li');
-    let a = document.createElement('a');
-    a.innerHTML = indicatorname;
-    li.id = indicatorname;
-    a.id = indicatorcode;
-    /*li.innerHTML=indicatorname;*/
-    document.getElementById('listper').appendChild(li);
-    document.getElementById(indicatorname).appendChild(a);
+    searching(indicatorname,indicatorcode,'listper',SearchIndexCodePeru);
   });
 };
 let addLiMS = () => {
   arrMScodeindic.forEach(function (ele, ind) {
     let indicatorname = arrMSnameindic[ind];
     let indicatorcode = arrMScodeindic[ind];
-    let li = document.createElement('li');
-    let a = document.createElement('a');
-    a.innerHTML = indicatorname;
-    li.id = indicatorname;
-    a.id = indicatorcode;
-    /*li.innerHTML=indicatorname;*/
-    document.getElementById('listMS').appendChild(li);
-    document.getElementById(indicatorname).appendChild(a);
+    searching(indicatorname,indicatorcode,'listMS',SearchIndexCodePeru);
   });
 };
 
@@ -214,14 +182,7 @@ let addLiSH = () => {
   arrSHcodeindic.forEach(function (ele, ind) {
     let indicatorname = arrSHnameindic[ind];
     let indicatorcode = arrSHcodeindic[ind];
-    let li = document.createElement('li');
-    let a = document.createElement('a');
-    a.innerHTML = indicatorname;
-    li.id = indicatorname;
-    a.id = indicatorcode;
-    /*li.innerHTML=indicatorname;*/
-    document.getElementById('listSH').appendChild(li);
-    document.getElementById(indicatorname).appendChild(a);
+    searching(indicatorname,indicatorcode,'listSH',SearchIndexCodePeru);
   });
 };
 
@@ -259,48 +220,48 @@ let indexMS = 0;
 indicatordataperu.forEach((element, ind) => {
   if (element.indicatorCode.startsWith('SE')) {
     arrSEcodeindic[indexSE] = element.indicatorCode;
-    arrSEnameindic[indexSE] = element.indicatorName;
-   /* console.log(arrSEcodeindic[indexSE]), console.log(arrSEnameindic[indexSE]);*/ indexSE++;
+    arrSEnameindic[indexSE] = element.indicatorName; 
+    indexSE++;
   }
   if (element.indicatorCode.startsWith('SL')) {
     arrSLcodeindic[indexSL] = element.indicatorCode;
     arrSLnameindic[indexSL] = element.indicatorName;
-   /* console.log(arrSLcodeindic[indexSL]), console.log(arrSLnameindic[indexSL]); */indexSL++;
+    indexSL++;
   }
   if (element.indicatorCode.startsWith('HD')) {
     arrHDcodeindic[indexHD] = element.indicatorCode;
     arrHDnameindic[indexHD] = element.indicatorName;
-  /*  console.log(arrHDcodeindic[indexHD]), console.log(arrHDnameindic[indexHD]);*/ indexHD++;
+    indexHD++;
   }
   if (element.indicatorCode.startsWith('SP')) {
     arrSPcodeindic[indexSP] = element.indicatorCode;
     arrSPnameindic[indexSP] = element.indicatorName;
-   /* console.log(arrSPcodeindic[indexSP]), console.log(arrSPnameindic[indexSP]); */indexSP++;
+    indexSP++;
   }
   if (element.indicatorCode.startsWith('IC')) {
     arrICcodeindic[indexIC] = element.indicatorCode;
     arrICnameindic[indexIC] = element.indicatorName;
-   /* console.log(arrICcodeindic[indexIC]), console.log(arrICnameindic[indexIC]);*/ indexIC++;
+    indexIC++;
   }
   if (element.indicatorCode.startsWith('SH')) {
     arrSHcodeindic[indexSH] = element.indicatorCode;
     arrSHnameindic[indexSH] = element.indicatorName;
-  /*  console.log(arrSHcodeindic[indexSH]), console.log(arrSHnameindic[indexSH]);*/ indexSH++;
+    indexSH++;
   }
   if (element.indicatorCode.startsWith('SG')) {
     arrSGcodeindic[indexSG] = element.indicatorCode;
     arrSGnameindic[indexSG] = element.indicatorName;
- /*   console.log(arrSGcodeindic[indexSG]), console.log(arrSGnameindic[indexSG]);*/ indexSG++;
+   indexSG++;
   }
   if (element.indicatorCode.startsWith('per')) {
     arrpercodeindic[indexper] = element.indicatorCode;
     arrpernameindic[indexper] = element.indicatorName;
-  /*  console.log(arrpercodeindic[indexper]), console.log(arrpernameindic[indexper]); */indexper++;
+    indexper++;
   }
   if (element.indicatorCode.startsWith('MS')) {
     arrMScodeindic[indexMS] = element.indicatorCode;
     arrMSnameindic[indexMS] = element.indicatorName;
- /*   console.log(arrMScodeindic[indexMS]), console.log(arrMSnameindic[indexMS]);*/ indexMS++;
+    indexMS++;
   }
 });
 
@@ -308,15 +269,29 @@ indicatordataperu.forEach((element, ind) => {
 document.getElementById('listSL').addEventListener('click', (e) => {
  console.log(e.target.id);
  codeindicatortable=e.target.id;
- SearchIndexCode.forEach((elem, indi) => {
-  if (SearchIndexCode[indi].indicatorCode === codeindicatortable) {
+ SearchIndexCodePeru.forEach((elem, indi) => {
+  if (SearchIndexCodePeru[indi].indicatorCode === codeindicatortable) {
    let indextable=indi;
-   let nameindicator=SearchIndexCode[indi].indicatorName;
+   let nameindicator=SearchIndexCodePeru[indi].indicatorName;
    document.getElementById('indicatorName').innerHTML=nameindicator;
-   drawBasic(indextable); drawBasic1(indextable); prom(indextable); 
+   drawBasic2(indextable); drawBasic1(indextable); prom(indextable); 
    document.getElementById('prom').innerHTML='El promedio es '+ prom(indextable);
   }
 });
  /*document.getElementById('main').innerHTML = '';*/
- screenchart_div.classList.add('show');
+ screenpresentation.classList.add('show');
+ screenchart.classList.add('show');
+});
+
+let clickPerú = document.getElementById('peru');
+const indicatorsPeru = WORLDBANK.PER.indicators;
+let contPeru=0;
+
+clickPerú.addEventListener('click', () => {
+  showscreencountry();
+  screenpresentation.classList.add('show');
+  screenSelectCountry.classList.add('show');
+  if(contPeru===0)
+  {addliSL();
+    contPeru++;}
 });
