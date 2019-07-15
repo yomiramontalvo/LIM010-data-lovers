@@ -2,10 +2,13 @@
 /* Acá va tu código */
 let screenLogin = document.getElementById('botonLogin');
 let screenSelectCountry = document.getElementById('screenSelectCountry');
-let screenpresentation = document.getElementById('presentation');
+let screenpresentationperu = document.getElementById('presentationperu');
 let screencountry = document.getElementById('screencountry');
 let screenchart = document.getElementById('chart');
 let screenempleo=document.getElementById('listSL');
+let screenbanner = document.getElementById('banner');
+let screeninfo=document.getElementById('info');
+let screenwhos=document.getElementById('whos');
 
 const hideallscreens = () => {
   screenLogin.classList.remove('show');
@@ -13,13 +16,19 @@ const hideallscreens = () => {
   screencountry.classList.remove('show');
   screenchart.classList.remove('show');
   screenempleo.classList.remove('show');
-  screenpresentation.classList.remove('show');
+  screenpresentationperu.classList.remove('show');
+  screenbanner.classList.remove('show');
+  screeninfo.classList.remove('show');
+  screenwhos.classList.remove('show');
   screenLogin.classList.add('hide');
   screenSelectCountry.classList.add('hide');
   screencountry.classList.add('hide');
   screenchart.classList.add('hide');
   screenempleo.classList.add('hide');
-  screenpresentation.classList.add('hide');
+  screenpresentationperu.classList.add('hide');
+  screenbanner.classList.add('hide');
+  screeninfo.classList.add('hide');
+  screenwhos.classList.add('hide');
 }
 const showscreenLogin = () => {
   hideallscreens();
@@ -47,10 +56,10 @@ const showscreenempleo = () => {
   screencountry.classList.add('show');
   screenempleo.classList.add('show');
 }
-const showscreenpresentation = () => {   
+const showscreenpresentationperu = () => {   
   hideallscreens();
   screenSelectCountry.classList.add('show');
-  screenpresentation.classList.add('show');
+  screenpresentationperu.classList.add('show');
 }
 
 /*Login*/
@@ -68,7 +77,7 @@ enter.addEventListener("keyup", function (event) {
     document.getElementById("EnterLogin").click();
   }
 });
-
+/*LOGIN*/
 EnterLogin.addEventListener('click', () => {
   let userresult = user.value;
   let passwordresult = password.value;
@@ -77,8 +86,8 @@ EnterLogin.addEventListener('click', () => {
     document.getElementById('body').classList.remove('bodyLogin');
     document.getElementById('Head').classList.remove('hide');
     showscreenSelectCountry();
-    showscreenpresentation();
-
+    screenbanner.classList.add('show');
+    screeninfo.classList.add('show');
   }
   else {
     user.value = "";
@@ -86,7 +95,7 @@ EnterLogin.addEventListener('click', () => {
     document.getElementById('mistakeLogin').innerHTML = "Usuario o contraseña incorrectos";
   }
 });
-
+/*LOGIN*/
 
 let SearchIndexCodePeru = WORLDBANK.PER.indicators;
 
@@ -111,7 +120,7 @@ const searching=(indicatorname,indicatorcode,type,country)=>{
 
 document.getElementById('Empleo').addEventListener('click',()=>{
   showscreenempleo();
-  screenpresentation.classList.add('show');
+  screenpresentationperu.classList.add('show');
 });
 
 let addliSL=()=>{
@@ -279,7 +288,7 @@ document.getElementById('listSL').addEventListener('click', (e) => {
   }
 });
  /*document.getElementById('main').innerHTML = '';*/
- screenpresentation.classList.add('show');
+ screenpresentationperu.classList.add('show');
  screenchart.classList.add('show');
 });
 
@@ -289,7 +298,7 @@ let contPeru=0;
 
 clickPerú.addEventListener('click', () => {
   showscreencountry();
-  screenpresentation.classList.add('show');
+  screenpresentationperu.classList.add('show');
   screenSelectCountry.classList.add('show');
   if(contPeru===0)
   {addliSL();

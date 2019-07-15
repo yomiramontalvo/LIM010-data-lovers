@@ -8,7 +8,7 @@ header{
 margin:0px;
 padding:0px;
 width:100%; /*anchura de elementos de bloque*//* permite tener float*/
-background: url(img/Rectangle.png);
+/*background: url(img/Rectangle.png);*/
 background-size: cover;
 display:flex;
 flex-direction: column-reverse;
@@ -34,7 +34,8 @@ justify-items: center;
     margin-top:12px;
     padding-left:45%;
     }
-.bodyLogin {
+
+    .bodyLogin {
 background: #FFFFFF;
 margin:auto;
 display:flex;
@@ -211,10 +212,10 @@ a {
     color:#333333;
 }
 
-.backgroundindicators {
+/*.backgroundindicators {
 display:flex;
 justify-content: center;
-}
+}*/
 .overview {
 width:320px ;
 }
@@ -231,7 +232,8 @@ header{
 margin:0px;
 padding:0px;
 width:100%; /*anchura de elementos de bloque*//* permite tener float*/
-background: url(img/Rectangle.png);
+background-image: url(img/Logo13.png);
+background-color: rgba(123, 229, 234, 0.445);
 background-size: cover;
 display:flex;
 flex-direction: row;
@@ -245,6 +247,7 @@ line-height: 100px; /*estar a altura de 200px*/
 font-family: 'Open Sans', sans-serif;
 font-weight: 900;
 justify-content: flex-end;
+margin-left: 3%;
 }
 
 
@@ -264,7 +267,7 @@ justify-content: flex-end;
     display:flex;
     justify-content:center;
     align-items:center;
-    background-image:url("img/backgroundLogin1.jpg"); 
+    background-image:url("img/BackgroundLogin2.png"); 
     background-repeat:no-repeat;
     background-attachment: fixed ;
     background-size:cover;
@@ -274,11 +277,12 @@ justify-content: flex-end;
    .masterLogin {
     width: 460px;
     height: 575px;
-    background: rgba(255, 255, 255, 0.534);
+    background: rgba(255, 255, 255, 0.829);
     display:flex;
     align-items:center;
     justify-content:center;
     margin:auto;
+    border-radius: 20px;
     }
 
     .backgroundLogin {
@@ -289,7 +293,7 @@ justify-content: flex-end;
     justify-content:center;
     flex-direction: column;
     }
-    
+
     .AllLogo {
     display: flex;
     width: 221.15px;
@@ -354,10 +358,13 @@ justify-content: flex-end;
     width: 335px;
     height:45px;
     bottom: 0%;
-    background: #7BE4EA;
+    background: rgba(138, 229, 240, 0.836);
     opacity: 0.5;
     border-radius: 20px;
     border:#7BE4EA;
+    font-size: 17px;
+    text-align: center;
+    font-weight: 600;
     }
         
     .buttonentry {
@@ -384,6 +391,188 @@ justify-content: flex-end;
     color: #FFFFFF;
     justify-content:center;
     }
+/*Nuestra Visión y noticias*/
+    .sectionVision{
+        width: 100%;
+        margin-bottom: 25px;
+        }
+        
+        .contenedor{
+         justify-content: flex-start;
+        }
+        #banner  img{
+          width: 100%;
+          height: 100%;
+        }
+        #banner .contenedor{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        color: #fff;
+        }
+        #banner h1{
+          font-size: 28px;
+        }
+        #banner a {
+          display: block;
+          width:  100px;
+          color: #fff;
+          text-decoration: none;
+          padding: 7px;
+          margin-top: 10px;
+          border: 3px solid #fff;
+        }
+      
+      .titu{
+        text-align: center;
+        font-size: 40;
+        color: #0071BC;
+      
+      }
+      
+      .info-colum{
+        position: relative;
+        margin-bottom: 30px;
+      }
+      .info-descrip{
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #fff;
+        background: rgba(0,0,0,0.5);
+        width: 60%;
+        height: 100%;
+        padding: 5px;
+      }
+      
+      .descrip-titu{
+        font-size: 25px;
+        margin: 5px 0;
+        background: #fff;
+      }
+      .link{
+        display: block;
+          width:  100px;
+          color: #fff;
+          text-decoration: none;
+          padding: 7px;
+          margin-top: 10px;
+          border: 3px solid #fff;
+      }
+      .footer{
+        background: #0071BC;
+        opacity: 0.5;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+      .footer .foot{
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+        font-size: 30px;
+        padding: 10px;
+        line-height: 40px;
+      }
+      
+      
+      
+        .titu{
+          width: 100%
+        }
+        .info-colum{
+          width: 48%;
+        }
+      
+        #info{
+          width: 100%;
+          margin-bottom: 25px;
+          flex-wrap: wrap;
+        margin-top: 0;
+          }
+          
+          .contenedor{
+           justify-content: flex-start;
+          }
+          #whos  img{
+            width: 100%;
+            height: 100%;
+          }
+          #whos .contenedor{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          color: #fff;
+          }
+          
+          .contenedor .LD{
+            font-size: 20px;
+            font-family: 'Open Sans',sans-serif;
+          }
+          .mision{
+            background-color: #009fda;
+            padding: 50px;
+            color: #fff;
+            text-align: center;
+          }
+          .mision h2{
+            font-size: 40px;
+            font-family: 'Open Sans',sans-serif;
+            padding: 0%;
+          }
+          .mision h3{
+            font-size: 20px;
+            font-family: 'Open Sans',sans-serif;
+            padding: 1%;
+          }
+        
+          .dato{
+            color: #0071BC;
+            font-size: 40px;
+            font-family: 'Open Sans',sans-serif;
+            text-align: center;
+            padding: 2%;
+        
+          }
+          .datos{
+            color: #0071BC;
+            font-size: 20px;
+            font-family: 'Open Sans',sans-serif;
+            text-align: center;
+            padding: 2%;
+        
+          }
+        
+          .bloque{
+            width: 100%;
+            height: auto;
+            background: #fff;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-flow: wrap;
+          }
+        
+          .pais{
+        
+            background-color: #0071BC; 
+            width: 25%;
+            height: 50px;
+            margin: 20px;
+            box-sizing: border-box;
+            border-radius: 3px;
+            color: #fff;
+            font-family: 'Open Sans',sans-serif;
+            text-align: center;
+          }
+
+/*nuestravision y noticias*/
+
+
+
+
 
     .bodySelectCountry {
     margin:0px;
@@ -398,7 +587,7 @@ justify-content: flex-end;
     #screenSelectCountry{
     justify-content:space-around;
     justify-content: flex-start; 
-    margin-right: 30%;
+    margin-left: 30%;
         }
     
      #countries{
@@ -493,7 +682,7 @@ padding: 10px;
 
 
 main {
-background: rgba(191, 224, 245, 0.658);
+background: rgba(123, 195, 240, 0.658);
 
 }
 
@@ -516,15 +705,15 @@ visibility: visible;
         color: #FFF;
     }
     
-   .backgroundindicators {
+   /*.backgroundindicators {
         display:flex;
         justify-content: left;
-    }
+    }*/
 
-    #screencountry{
+   /* #screencountry{
         margin-top: 180px;
         margin-left: 20px;
-    }
+    }*/
 
     #screencountry ul a{
         text-align: justify;
@@ -553,30 +742,58 @@ visibility: visible;
 
     .sli{
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
+
+    
     
     #cont{
         display: flex;
-        justify-content: center;
-        width: auto;
-        margin:20px;
+        flex-direction:row-reverse;
     }
 
-  /*  #presentation{
-    width: 80%;
+   /* .cont {
+        display: flex;
+        flex-direction: column;
     }*/
-    slider{
+
+    .contSelect {
+    background-color: rgba(10, 46, 70, 0.747);
+    color: #FFF;
+    text-align: center;
+    width: 93.3%;
+    height: 15%;
+    margin: 29% 2.9%;
+    /*border-radius: 20px;*/
+    color:#ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+   #presentationperu slider{
+    margin: 10px 2.5%;
+    border-radius: 20px;
+    }
+
+    #presentationperu slider{
        display: block;
-        width: 97%;
-        height: 30%;
-        background-image: url(img/5.png);
+        width: 80%;
+        height: 50%;
+        background-image: url(img/Peru5.jpg);
         background-repeat:no-repeat;
         background-size:cover;
+        background-position: 50% 20%;
         overflow: hidden;
         position: absolute;
     }
     
-    slider > *{
+    #presentationperu slider > *{
         position: absolute;
         display: block;
         width: 100%;
@@ -586,33 +803,49 @@ visibility: visible;
         overflow: hidden;
     }
     
-    slide:nth-child(1){
+    #presentationperu slider slide:nth-child(1){
         left: 0%;
         animation-delay: 0s;
-        background-image: url(img/1.jpg);
+        background-image: url(img/Peru1.jpeg);
         background-size: cover;
         background-position: center;
+        text-align: center;
+        display:flex;
+        justify-content: left;
+        align-items:flex-end;
     }
-    slide:nth-child(2){
+   #presentationperu slider slide:nth-child(2){
         left: 0%;
         animation-delay: -5s;
-        background-image: url(img/2.jpg);
+        background-image: url(img/Peru2.jpeg);
         background-size: cover;
-        background-position: center;
+        background-position: 50% 0%;
+        text-align: center;
+        display:flex;
+        justify-content: left;
+        align-items:flex-end;
     }
-    slide:nth-child(3){
+    #presentationperu slider slide:nth-child(3){
         left: 0%;
         animation-delay: -10s;
-        background-image: url(img/3.jpg);
+        background-image: url(img/Peru3.jpg);
         background-size: cover;
-        background-position: center;
+        background-position: 40% 20%;
+        text-align: center;
+        display:flex;
+        justify-content: left;
+        align-items:flex-end;
     }
-    slide:nth-child(4){
+   #presentationperu slider slide:nth-child(4){
         left: 0%;
         animation-delay: -15s;
-        background-image: url(img/4.jpg);
+        background-image: url(img/Peru4.jpg);
         background-size: cover;
-        background-position: center;
+        background-position: 40% 30%;
+        text-align: center;
+        display:flex;
+        justify-content: left;
+        align-items:flex-end;
     }
     
     slide p{
@@ -621,9 +854,24 @@ visibility: visible;
         text-align: center;
         display: inline-block;
         width: 100%;
-        
+    
     }
     
+    .contentancla {
+     width: 70%;
+     height: 150px;
+     background-color: #00000093;
+     display: flex;
+     align-items: center;
+     text-align: center;
+    }
+
+    .ancla {
+       color:#ffffff;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 30px;
+        text-align: center;
+    }
     @keyframes slide{
         0% { left: 100%; width: 100%;}
         5% { left: 0;}
