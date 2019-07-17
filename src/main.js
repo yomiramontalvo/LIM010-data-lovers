@@ -8,7 +8,7 @@ let screenchart = document.getElementById('chart');
 let screenempleo=document.getElementById('listSL');
 let screenbanner = document.getElementById('banner');
 let screeninfo=document.getElementById('info');
-let screenwhos=document.getElementById('whos');
+let screenResult=document.getElementById('ScreenResult');
 
 const hideallscreens = () => {
   screenLogin.classList.remove('show');
@@ -19,7 +19,7 @@ const hideallscreens = () => {
   screenpresentationperu.classList.remove('show');
   screenbanner.classList.remove('show');
   screeninfo.classList.remove('show');
-  screenwhos.classList.remove('show');
+  screenResult.classList.remove('show');
   screenLogin.classList.add('hide');
   screenSelectCountry.classList.add('hide');
   screencountry.classList.add('hide');
@@ -28,7 +28,7 @@ const hideallscreens = () => {
   screenpresentationperu.classList.add('hide');
   screenbanner.classList.add('hide');
   screeninfo.classList.add('hide');
-  screenwhos.classList.add('hide');
+  screenResult.classList.add('hide');
 }
 const showscreenLogin = () => {
   hideallscreens();
@@ -60,6 +60,12 @@ const showscreenpresentationperu = () => {
   hideallscreens();
   screenSelectCountry.classList.add('show');
   screenpresentationperu.classList.add('show');
+}
+
+const showscreenResult = () => {   
+  hideallscreens();
+  screenSelectCountry.classList.add('show');
+  screenResult.classList.add('show');
 }
 
 /*Login*/
@@ -275,6 +281,8 @@ indicatordataperu.forEach((element, ind) => {
 });
 
 /*Office hours*/
+
+
 document.getElementById('listSL').addEventListener('click', (e) => {
  console.log(e.target.id);
  codeindicatortable=e.target.id;
@@ -282,15 +290,74 @@ document.getElementById('listSL').addEventListener('click', (e) => {
   if (SearchIndexCodePeru[indi].indicatorCode === codeindicatortable) {
    let indextable=indi;
    let nameindicator=SearchIndexCodePeru[indi].indicatorName;
+   let matrizIndicator = new Array(Object.entries(WORLDBANK.PER.indicators[indextable].data));
+   let inmatriz = matrizIndicator[0];
+   inmatriz.forEach(function (ele, ind) {
+     inmatriz[ind][0] = parseInt(inmatriz[ind][0]);
+     inmatriz[ind][1] = parseFloat(inmatriz[ind][1]);  
+   });
+   
+let datanew= inmatriz.filter(dataind => isNaN(dataind[1])===false);
+console.log(datanew);
+
    document.getElementById('indicatorName').innerHTML=nameindicator;
-   drawBasic2(indextable); drawBasic1(indextable); prom(indextable); 
-   document.getElementById('prom').innerHTML='El promedio es '+ prom(indextable);
+   let multirange= document.getElementById('multirange');
+
+   multirange.innerHTML = `<div class='multi-range' data-lbound='${datanew[0][0]}' data-ubound='${datanew[datanew.length-1][0]}' id="rango">
+   <hr/>
+   <input type='range' id="lbound"  min='${datanew[0][0]}' max='${datanew[datanew.length-2][0]}' step='1' value='${datanew[0][0]}'   
+          oninput='this.parentNode.dataset.lbound=this.value'
+          />
+   <input type='range'  id="ubound"  min='${datanew[1][0]}' max='${datanew[datanew.length-1][0]}' step='1' value='${datanew[datanew.length-1][0]}' 
+          oninput='this.parentNode.dataset.ubound=this.value'
+          />
+   </div>`;
+
+   const rangoInput = document.getElementById('rango');
+   
+   rangoInput.addEventListener('change', (e)=>{
+   let min;
+   let max;
+   let lboun=0;
+   let uboun=0;
+    
+   if(e.target.id === 'lbound'){
+     lboun++;
+      min = e.target.value;
+     }  else {
+      uboun++;
+      max = e.target.value;
+     } 
+   
+   if(lboun===0){
+     min=document.getElementById('lbound').value;
+   }  
+   if(uboun===0){
+    max=document.getElementById('ubound').value;
+  } 
+    
+    console.log(min);
+    console.log(max);
+    drawBasic2(datanew,min,max);drawTable(datanew,min,max);drawTableorder(datanew,min,max);
+   });   
+
+
+
+  /* drawBasic2(datanew);
+   /* drawBasic1(indextable); prom(indextable); 
+   document.getElementById('prom').innerHTML='El promedio es '+ prom(indextable);*/
   }
 });
- /*document.getElementById('main').innerHTML = '';*/
- screenpresentationperu.classList.add('show');
- screenchart.classList.add('show');
+
+document.getElementById('cont').classList.remove('cont');
+document.getElementById('cont').classList.add('newcont');
+showscreenResult();
+screenchart.classList.add('show');
+screencountry.classList.add('show');
 });
+
+
+
 
 let clickPerú = document.getElementById('peru');
 const indicatorsPeru = WORLDBANK.PER.indicators;
@@ -304,3 +371,4 @@ clickPerú.addEventListener('click', () => {
   {addliSL();
     contPeru++;}
 });
+

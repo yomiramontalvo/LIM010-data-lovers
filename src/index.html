@@ -10,18 +10,22 @@
 
 <body id="body" class="bodyLogin">
 
+<!--HEADER-->
   <header id="Head" class="hide">
+   <section class="order">
     <div class="head" >Latin Data</div>
-    <img class="logohead" src="img/Logo.png"/>  
+    <img class="logohead" src="img/Logo.png"/>
+  </section>  
     <section id="screenSelectCountry" class="hide">
-          <div id="countries" class="hide">
-           <ul>
+      <div class="selectcountry"><h>Seleccionar país</h></div>
+      <div id="countries" class="hide">           
+          <ul>
               <li id="peru" value="PER">Perú</li>
               <li id="chile" value="CHL">Chile</li>
               <li id="mexico" value="MEX">México</li>
               <li id="brasil" value="BRA">Brasil</li>
             </ul>
-          </div>
+          </div>  
         </section>
 </header>
 
@@ -134,8 +138,11 @@
 
 
     <main id="main">
-    <div id="cont">
+    <div id="cont" class="cont">
       <div  id="presentationperu" class="sli hide">
+     <section class="contSelect" >
+        <p>Conoce el flujo de los Indicadores de Perú al seleccionar un indicador</p>
+    </section>
         <slider>
           <slide><div class="contentancla"><a href="https://peru21.pe/peru/promperu-peru-recibe-cuatro-premios-world-travel-awards-sudamerica-2019-490140" target="_blank" class="ancla">Perú recibe cuatro premios en los World Travel Awards Sudamérica 2019</a></div>
           </slide>
@@ -146,12 +153,8 @@
           <slide><div class="contentancla"><a href="https://www.zankyou.com.pe/p/dia-de-la-mujer-imperdibles-historias-de-peruanas-del-siglo-xxi-que-nos-inspiran" target="_blank" class="ancla">Día de la Mujer: imperdibles historias de peruanas del siglo XXI que nos inspiran</a></div>
           </slide>
         </slider>
-        <section class="contSelect" >
-          <p>Selecciona un indicador para conocer información de Perú</p>
-        </section>
       </div>
 
-    
       <section id="screencountry" class="hide">
         <section class="buttonindicator">
         <a class="titleindicators">Indicadores</a>
@@ -189,15 +192,22 @@
         </ul>
       </div>
     </div>
+
   </section>
+  <section id="ScreenResult" class="hide">
+      <div>
+        <h id="indicatorName"></h>
+      </div><br/>
+      <div id="multirange"></div>
+      <div id="chart"></div></br>
+      <div id="table_div"></div></br>
+      <div id="table_divorderasc"></div>
+      <div id="orderchart_div"></div>
+      <div id="prom"></div>
+</section>
 </div>
-        <div>
-          <h id="indicatorName"></h>
-        </div><br />
-        <div id="chart" class="hide"></div>
-        <div id="orderchart_div"></div>
-        <div id="prom"></div>
-      
+
+     
        
   <!--  </section>-->
 
