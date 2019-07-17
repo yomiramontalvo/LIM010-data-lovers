@@ -103,6 +103,9 @@ EnterLogin.addEventListener('click', () => {
 /*LOGIN*/
 
 let SearchIndexCodePeru = WORLDBANK.PER.indicators;
+let SearchIndexCodeMexico = WORLDBANK.MEX.indicators;
+let SearchIndexCodeBrasil = WORLDBANK.BRA.indicators;
+let SearchIndexCodeChile = WORLDBANK.CHL.indicators;
 
 let searching=(indicatorname,indicatorcode,type,country)=>{
   country.forEach((elem, indi) => {
@@ -127,21 +130,7 @@ document.getElementById('Empleo').addEventListener('click',()=>{
 showscreenempleo();
 });
 
-let indicatordataperu = WORLDBANK.PER.indicators;
-let dataSE= indicatordataperu.filter(dataind => (dataind.indicatorCode.startsWith('SE')===true));
-let dataSL= indicatordataperu.filter(dataind => (dataind.indicatorCode.startsWith('SL')===true));
-let dataHD= indicatordataperu.filter(dataind => (dataind.indicatorCode.startsWith('HD')===true));
-let dataSP= indicatordataperu.filter(dataind => (dataind.indicatorCode.startsWith('SP')===true));
-let dataIC= indicatordataperu.filter(dataind => (dataind.indicatorCode.startsWith('IC')===true));
-let dataSH= indicatordataperu.filter(dataind => (dataind.indicatorCode.startsWith('SH')===true));
-let dataSG= indicatordataperu.filter(dataind => (dataind.indicatorCode.startsWith('SG')===true));
-let dataper= indicatordataperu.filter(dataind => (dataind.indicatorCode.startsWith('per')===true));
-let dataMS= indicatordataperu.filter(dataind => (dataind.indicatorCode.startsWith('MS')===true));
-
-
-
-
-let addLiSL = () => {
+let addLiSL = (dataSL) => {
   dataSL.forEach(function (ele, ind) {
     let indicatorname = dataSL[ind].indicatorName;
     let indicatorcode = dataSL[ind].indicatorCode;
@@ -149,7 +138,7 @@ let addLiSL = () => {
   });
 };
 
-let addLiSE = () => {
+let addLiSE = (dataSE) => {
   dataSE.forEach(function (ele, ind) {
     let indicatorname = dataSE[ind].indicatorName;
     let indicatorcode = dataSE[ind].indicatorCode;
@@ -157,7 +146,7 @@ let addLiSE = () => {
   });
 };
 
-let addLiHD = () => {
+let addLiHD = (dataHD) => {
   dataHD.forEach(function (ele, ind) {
     let indicatorname = dataHD[ind].indicatorName;
     let indicatorcode = dataHD[ind].indicatorCode;
@@ -165,7 +154,7 @@ let addLiHD = () => {
   });
 };
 
-let addLiSG = () => {
+let addLiSG = (dataSG) => {
   dataSG.forEach(function (ele, ind) {
     let indicatorname = dataSG[ind].indicatorName;
     let indicatorcode = dataSG[ind].indicatorCode;
@@ -173,7 +162,7 @@ let addLiSG = () => {
   });
 };
 
-let addLiSP = () => {
+let addLiSP = (dataSP) => {
   dataSP.forEach(function (ele, ind) {
     let indicatorname = dataSP[ind].indicatorName;
     let indicatorcode = dataSP[ind].indicatorCode;
@@ -181,7 +170,7 @@ let addLiSP = () => {
   });
 };
 
-let addLiIC = () => {
+let addLiIC = (dataIC) => {
   dataIC.forEach(function (ele, ind) {
     let indicatorname = dataIC[ind].indicatorName;
     let indicatorcode = dataIC[ind].indicatorCode;
@@ -189,7 +178,7 @@ let addLiIC = () => {
   });
 };
 
-let addLiper = () => {
+let addLiper = (dataper) => {
   dataper.forEach(function (ele, ind) {
     let indicatorname = dataper[ind].indicatorName;
     let indicatorcode = dataper[ind].indicatorCode;
@@ -197,7 +186,7 @@ let addLiper = () => {
   });
 };
 
-let addLiMS = () => {
+let addLiMS = (dataMS) => {
   dataMS.forEach(function (ele, ind) {
     let indicatorname = dataMS[ind].indicatorName;
     let indicatorcode = dataMS[ind].indicatorCode;
@@ -205,7 +194,7 @@ let addLiMS = () => {
   });
 };
 
-let addLiSH = () => {
+let addLiSH = (dataSH) => {
   dataSH.forEach(function (ele, ind) {
     let indicatorname = dataSH[ind].indicatorName;
     let indicatorcode = dataSH[ind].indicatorCode;
@@ -213,29 +202,41 @@ let addLiSH = () => {
   });
 };
 
+let indicatordataperu = WORLDBANK.PER.indicators;
+
+let createdata=(indicatorcountry)=> {
+let dataSE= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('SE')===true));
+let dataSL= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('SL')===true));
+let dataHD= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('HD')===true));
+let dataSP= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('SP')===true));
+let dataIC= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('IC')===true));
+let dataSH= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('SH')===true));
+let dataSG= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('SG')===true));
+let dataper= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('per')===true));
+let dataMS= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('MS')===true));
+addLiHD(dataHD); addLiIC(dataIC); addLiMS(dataMS); addLiSE(dataSE); addLiSG(dataSG); addLiSH(dataSH); addLiSL(dataSL); addLiSP(dataSP); addLiper(dataper);
+}
+
+/*clickear Peru*/
 let clickPeru = document.getElementById('peru');
-const indicatorsPeru = WORLDBANK.PER.indicators;
 let contPeru=0;
 
-
-
 clickPeru.addEventListener('click', () => {
+  let indicatordataperu = WORLDBANK.PER.indicators;
   showscreencountry();
   screenpresentationperu.classList.add('show');
   screenSelectCountry.classList.add('show');
   if(contPeru===0)
-  { addLiSL(); addLiHD(); addLiIC(); addLiMS(); addLiSE(); addLiSG(); addLiSP(); addLiper();addLiSH();
+  { createdata(indicatordataperu);
     contPeru++;}
 });
+/*clickear Peru*/
 
 
-
-
-/*Office hours*/
-
-
+document.getElementById('listAllindicators').addEventListener('click',(e) => {
+console.log(e.target.id);
 document.getElementById('listSL').addEventListener('click', (e) => {
- console.log(e.target.id);
+  console.log(e.target.id);
  codeindicatortable=e.target.id;
  SearchIndexCodePeru.forEach((elem, indi) => {
   if (SearchIndexCodePeru[indi].indicatorCode === codeindicatortable) {
@@ -292,7 +293,6 @@ console.log(datanew);
 
   }
 });
-
 document.getElementById('cont').classList.remove('cont');
 document.getElementById('cont').classList.add('newcont');
 showscreenResult();
@@ -300,5 +300,5 @@ screenchart.classList.add('show');
 screencountry.classList.add('show');
 });
 
-
+}) ;
 

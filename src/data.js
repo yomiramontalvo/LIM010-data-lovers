@@ -1,6 +1,5 @@
 google.charts.load('current', { packages: ['corechart', 'line'] });
-/*google.charts.setOnLoadCallback(drawBasic);
-*/
+
 google.charts.load('current', {'packages':['table']});
       google.charts.setOnLoadCallback(drawTable);
 
@@ -23,7 +22,7 @@ console.log(datafilter);
       title: 'Indicator'
     }
   };
-
+  
   var chartnormal = new google.visualization.LineChart(document.getElementById('chart'));
 
   chartnormal.draw(data, options);
