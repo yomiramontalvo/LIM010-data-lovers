@@ -2,11 +2,9 @@
 /* Acá va tu código */
 let screenLogin = document.getElementById('botonLogin');
 let screenSelectCountry = document.getElementById('screenSelectCountry');
-let screenpresentationperu = document.getElementById('presentationperu');
+let screenpresentationPER = document.getElementById('presentationPER');
 let screencountry = document.getElementById('screencountry');
 let screenchart = document.getElementById('chart');
-let screenbanner = document.getElementById('banner');
-let screeninfo = document.getElementById('info');
 let screenResult = document.getElementById('ScreenResult');
 /* Login */
 let EnterLogin = document.getElementById('EnterLogin');
@@ -27,17 +25,13 @@ const hideallscreens = () => {
   screenSelectCountry.classList.remove('show');
   screencountry.classList.remove('show');
   screenchart.classList.remove('show');
-  screenpresentationperu.classList.remove('show');
-  screenbanner.classList.remove('show');
-  screeninfo.classList.remove('show');
+  screenpresentationPER.classList.remove('show');
   screenResult.classList.remove('show');
   screenLogin.classList.add('hide');
   screenSelectCountry.classList.add('hide');
   screencountry.classList.add('hide');
   screenchart.classList.add('hide');
-  screenpresentationperu.classList.add('hide');
-  screenbanner.classList.add('hide');
-  screeninfo.classList.add('hide');
+  screenpresentationPER.classList.add('hide');
   screenResult.classList.add('hide');
 };
 
@@ -63,14 +57,14 @@ const showscreenchart = () => {
 
 const showscreenempleo = () => {
   screenempleo.classList.add('show');
-  screenpresentationperu.classList.remove('show');
-  screenpresentationperu.classList.add('hide');
+  screenpresentationPER.classList.remove('show');
+  screenpresentationPER.classList.add('hide');
 };
 
-const showscreenpresentationperu = () => {
+const showscreenpresentationPER = () => {
   hideallscreens();
   screenSelectCountry.classList.add('show');
-  screenpresentationperu.classList.add('show');
+  screenpresentationPER.classList.add('show');
 };
 
 const showscreenResult = () => {
@@ -97,6 +91,8 @@ EnterLogin.addEventListener('click', () => {
     document.getElementById('body').classList.remove('bodyLogin');
     document.getElementById('Head').classList.remove('hide');
     showscreenSelectCountry();
+    screenbanner.classList.remove('hide');
+    screeninfo.classList.remove('hide');
     screenbanner.classList.add('show');
     screeninfo.classList.add('show');
   } else {
@@ -138,7 +134,7 @@ document.body.addEventListener('click', (event) => {
       pais = event.target.id;
       console.log(pais);
       showscreencountry();
-      screenpresentationperu.classList.add('show');
+      screenpresentationPER.classList.add('show');
       screenSelectCountry.classList.add('show');
     } else if (event.target.tagName === 'A') {
       tipoIndicador = event.target.id;
