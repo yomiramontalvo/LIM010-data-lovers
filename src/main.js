@@ -120,48 +120,59 @@ let pais = '';
 let tipoIndicador = '';
 
 document.body.addEventListener('click', (event) => {
-  if (event.target.tagName === 'LI') {
-    if (tipoIndicador !== '') {
-      document.getElementById('listSL').innerHTML = '';
-      document.getElementById('listHD').innerHTML = '';
-      document.getElementById('listSG').innerHTML = '';
-      document.getElementById('listSE').innerHTML = '';
-      document.getElementById('listSP').innerHTML = '';
-      document.getElementById('listIC').innerHTML = '';
-      document.getElementById('listSH').innerHTML = '';
-      document.getElementById('listper').innerHTML = '';
-      document.getElementById('listMS').innerHTML = '';
+  console.log(event.target.tagName);
+  if (event.target.tagName !== 'INPUT') {
+    if (event.target.tagName === 'LI') {
+      if (tipoIndicador !== '') {
+        document.getElementById('listSL').innerHTML = '';
+        document.getElementById('listHD').innerHTML = '';
+        document.getElementById('listSG').innerHTML = '';
+        document.getElementById('listSE').innerHTML = '';
+        document.getElementById('listSP').innerHTML = '';
+        document.getElementById('listIC').innerHTML = '';
+        document.getElementById('listSH').innerHTML = '';
+        document.getElementById('listper').innerHTML = '';
+        document.getElementById('listMS').innerHTML = '';
+      }
+      tipoIndicador = '';
+      pais = event.target.id;
+      console.log(pais);
+      showscreencountry();
+      screenpresentationperu.classList.add('show');
+      screenSelectCountry.classList.add('show');
+    } else if (event.target.tagName === 'A') {
+      tipoIndicador = event.target.id;
+      console.log(tipoIndicador);
     }
-    tipoIndicador = '';
-    pais = event.target.id;
-    console.log(pais);
-    showscreencountry();
-    screenpresentationperu.classList.add('show');
-    screenSelectCountry.classList.add('show');
-  } else if (event.target.tagName === 'A') {
-    tipoIndicador = event.target.id;
-    console.log(tipoIndicador);
-  }
-  if (pais !== '') {
-    const indicadoresPorPaisyTipo = createdatanew(WORLDBANK, pais, tipoIndicador);
-    console.log(indicadoresPorPaisyTipo);
-    // const idElementoLi = `list${tipoIndicador}`;
-    // console.log(idElementoLi);
-    if (tipoIndicador.length === 2 || tipoIndicador.length === 3) {
-      const idElementoLi = `list${tipoIndicador}`;
-      console.log(idElementoLi);
-      paintingList(indicadoresPorPaisyTipo, idElementoLi);
-    }
-    if (tipoIndicador.length > 2) {
-      const idElementoLi = tipoIndicador;
-      console.log(idElementoLi);
-      const dataDeCodigoIndicador = createdatanew(WORLDBANK, pais, idElementoLi);
-      const createDataForTablas = dataDeCodigoIndicador[0].data;
-      const indicatorName = dataDeCodigoIndicador[0].indicatorName;
-      console.log(indicatorName);
-      const newdata = CreateArray(createDataForTablas);
-      console.log(newdata);
-      createGrafic(newdata, indicatorName);
+    if (pais !== '') {
+      console.log(pais);
+      const indicadoresPorPaisyTipo = createdatanew(WORLDBANK, pais, tipoIndicador);
+      console.log(indicadoresPorPaisyTipo);
+      // const idElementoLi = `list${tipoIndicador}`;
+      // console.log(idElementoLi);
+      if (tipoIndicador.length === 2 || tipoIndicador.length === 3) {
+        const idElementoLi = `list${tipoIndicador}`;
+        console.log(idElementoLi);
+        paintingList(indicadoresPorPaisyTipo, idElementoLi);
+      } else if (tipoIndicador.length > 3) {
+        console.log(tipoIndicador);
+        const idElementoLi = tipoIndicador;
+        console.log(idElementoLi);
+        const dataDeCodigoIndicador = createdatanew(WORLDBANK, pais, idElementoLi);
+        const createDataForTablas = dataDeCodigoIndicador[0].data;
+        //  console.log(createDataForTablas);
+        const indicatorName = dataDeCodigoIndicador[0].indicatorName;
+        console.log(indicatorName);
+        const newdata = CreateArray(createDataForTablas);
+        console.log(newdata);
+        createGrafic(newdata, indicatorName);
+        drawBasic2(newdata, newdata[0][0], newdata[newdata.length - 1][0]);
+        document.getElementById('cont').classList.remove('cont');
+        document.getElementById('cont').classList.add('newcont');
+        showscreenResult();
+        screenchart.classList.add('show');
+        screencountry.classList.add('show');
+      }
     }
   }
 });
@@ -189,6 +200,7 @@ let createGrafic = (newdata, indicatorName) => {
     if (event.target.id === 'lbound') {
       lboun++;
       min = event.target.value;
+      console.log(min);
     } else {
       uboun++;
       max = event.target.value;
