@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body id="body" class="bodyLogin">
-
 <!--HEADER-->
   <header id="Head" class="hide">
    <section class="order">
@@ -19,17 +16,16 @@
     <section id="screenSelectCountry" class="hide">
       <div class="selectcountry"><h>Seleccionar país</h></div>
       <div id="countries" class="hide">           
-          <ul>
-              <li id="peru" value="PER">Perú</li>
-              <li id="chile" value="CHL">Chile</li>
-              <li id="mexico" value="MEX">México</li>
-              <li id="brasil" value="BRA">Brasil</li>
+          <ul id="pais">
+              <li id="PER" value="PER">Perú</li>
+              <li id="CHL" value="CHL">Chile</li>
+              <li id="MEX" value="MEX">México</li>
+              <li id="BRA" value="BRA">Brasil</li>
             </ul>
           </div>  
-        </section>
-</header>
-
-    <!---ScreenLogin-->
+    </section>
+   </header>
+    <!---ScreenLogin--> 
     <section id="botonLogin" class="masterLogin">
       <section class="backgroundLogin">
         <div class="AllLogo">
@@ -154,7 +150,6 @@
           </slide>
         </slider>
       </div>
-
       <section id="screencountry" class="hide">
         <section class="buttonindicator">
         <a class="titleindicators">Indicadores</a>
@@ -162,32 +157,33 @@
         <div class="mainmenu">
           <div class="menu">
           <ul id="listAllindicators">
-          <li><a class="titletypeindicator" id="Empleo" href="#">Empleo</a>
-            <ul id="listSL" class="hide">
-              </ul></li>
-          <li><a class="titletypeindicator" id="Desarrollo Social" href="#">Desarrollo Social</a></li>
+          <li><a class="titletypeindicator" id="SL" class="hide" href="#">Empleo</a>
+            <ul id="listSL">
+            </ul>
+          </li>
+          <li><a class="titletypeindicator" id="HD" class="hide" href="#">Desarrollo Social</a>
           <ul id="listHD">
+          </ul></li>
+          <li><a class="titletypeindicator" id="SG" class="hide"  href="#">Género</a>
+          <ul id="listSG"></li>
           </ul>
-          <li><a class="titletypeindicator" id="genero" href="#">Género</a></li>
-          <ul id="listSG">
+         <li><a class="titletypeindicator" id="SE" class="hide" href="#">Educación</a>
+          <ul id="listSE"></li>
           </ul>
-         <li><a class="titletypeindicator" id="educación" href="#">Educación</a></li>
-          <ul id="listSE">
+         <li><a class="titletypeindicator" id="SP" class="hide" href="#">Población</a>
+          <ul id="listSP"></li>
           </ul>
-         <li><a class="titletypeindicator" id="poblacion" href="#">Población</a></li>
-          <ul id="listSP">
+          <li><a class="titletypeindicator" id="IC" class="hide" href="#">Sector Privado</a>
+          <ul id="listIC"></li>
           </ul>
-          <li><a class="titletypeindicator" id="sectorprivado" href="#">Sector Privado</a></li>
-          <ul id="listIC">
+          <li><a class="titletypeindicator" id="SH" class="hide" href="#">Salud</a>
+          <ul id="listSH"></li>
           </ul>
-          <li><a class="titletypeindicator" id="salud" href="#">Salud</a></li>
-          <ul id="listSH">
+          <li><a class="titletypeindicator" id="per"class="hide"  href="#">Protección Social</a>
+          <ul id="listper"></li>
           </ul>
-          <li><a class="titletypeindicator" id="proteccionsocial" href="#">Protección Social</a></li>
-          <ul id="listper">
-          </ul>
-          <li><a class="titletypeindicator" id="sector publico" href="#">Sector Público</a></li>
-          <ul id="listMS">
+          <li><a class="titletypeindicator" id="MS" class="hide" href="#">Sector Público</a>
+          <ul id="listMS"></li>
           </ul>
         </ul>
       </div>

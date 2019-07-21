@@ -5,17 +5,28 @@ let screenSelectCountry = document.getElementById('screenSelectCountry');
 let screenpresentationperu = document.getElementById('presentationperu');
 let screencountry = document.getElementById('screencountry');
 let screenchart = document.getElementById('chart');
-let screenempleo=document.getElementById('listSL');
 let screenbanner = document.getElementById('banner');
-let screeninfo=document.getElementById('info');
-let screenResult=document.getElementById('ScreenResult');
+let screeninfo = document.getElementById('info');
+let screenResult = document.getElementById('ScreenResult');
+/* Login */
+let EnterLogin = document.getElementById('EnterLogin');
+let user = document.getElementById('user');
+let password = document.getElementById('password');
+let enter = document.getElementById('password');
+/* Seleccionar paises */
+const elementUlCountry = document.getElementById('pais');
+
+/* Data de indicadores por pais */
+let SearchIndexCodePeru = WORLDBANK.PER.indicators;
+let SearchIndexCodeMexico = WORLDBANK.MEX.indicators;
+let SearchIndexCodeBrasil = WORLDBANK.BRA.indicators;
+let SearchIndexCodeChile = WORLDBANK.CHL.indicators;
 
 const hideallscreens = () => {
   screenLogin.classList.remove('show');
   screenSelectCountry.classList.remove('show');
   screencountry.classList.remove('show');
   screenchart.classList.remove('show');
-  screenempleo.classList.remove('show');
   screenpresentationperu.classList.remove('show');
   screenbanner.classList.remove('show');
   screeninfo.classList.remove('show');
@@ -24,281 +35,176 @@ const hideallscreens = () => {
   screenSelectCountry.classList.add('hide');
   screencountry.classList.add('hide');
   screenchart.classList.add('hide');
-  screenempleo.classList.add('hide');
   screenpresentationperu.classList.add('hide');
   screenbanner.classList.add('hide');
   screeninfo.classList.add('hide');
   screenResult.classList.add('hide');
-}
+};
+
 const showscreenLogin = () => {
   hideallscreens();
   screenLogin.classList.add('show');
-}
+};
 
 const showscreenSelectCountry = () => {
   hideallscreens();
   screenSelectCountry.classList.add('show');
-}
+};
 
 const showscreencountry = () => {
   hideallscreens();
   screencountry.classList.add('show');
-}
+};
 
-const showscreenchart = () => {   
-    hideallscreens();
-   screenchart.classList.add('show');
-}
+const showscreenchart = () => {
+  hideallscreens();
+  screenchart.classList.add('show');
+};
 
-const showscreenempleo = () => {   
+const showscreenempleo = () => {
   screenempleo.classList.add('show');
   screenpresentationperu.classList.remove('show');
   screenpresentationperu.classList.add('hide');
-}
-const showscreenpresentationperu = () => {   
+};
+
+const showscreenpresentationperu = () => {
   hideallscreens();
   screenSelectCountry.classList.add('show');
   screenpresentationperu.classList.add('show');
-}
+};
 
-const showscreenResult = () => {   
+const showscreenResult = () => {
   hideallscreens();
   screenSelectCountry.classList.add('show');
   screenResult.classList.add('show');
-}
+};
 
-/*Login*/
-let EnterLogin = document.getElementById('EnterLogin');
-let user = document.getElementById('user');
-let password = document.getElementById('password');
-let enter = document.getElementById('password');
-
-enter.addEventListener("keyup", function (event) {
+enter.addEventListener('keyup', (event) => {
   // Number 13 is the "Enter" key on the keyboard
   if (event.keyCode === 13) {
     // Cancel the default action, if needed
     event.preventDefault();
     // Trigger the button element with a click
-    document.getElementById("EnterLogin").click();
+    document.getElementById('EnterLogin').click();
   }
 });
-/*LOGIN*/
+/* LOGIN */
 EnterLogin.addEventListener('click', () => {
   let userresult = user.value;
   let passwordresult = password.value;
-  if (userresult === "1" && passwordresult === "1") {
+  if (userresult === '1' && passwordresult === '1') {
     document.getElementById('body').classList.add('bodySelectCountry');
     document.getElementById('body').classList.remove('bodyLogin');
     document.getElementById('Head').classList.remove('hide');
     showscreenSelectCountry();
     screenbanner.classList.add('show');
     screeninfo.classList.add('show');
-  }
-  else {
-    user.value = "";
-    password.value = "";
-    document.getElementById('mistakeLogin').innerHTML = "Usuario o contraseña incorrectos";
+  } else {
+    user.value = '';
+    password.value = '';
+    document.getElementById('mistakeLogin').innerHTML = 'Usuario o contraseña incorrectos';
   }
 });
-/*LOGIN*/
 
-let SearchIndexCodePeru = WORLDBANK.PER.indicators;
-let SearchIndexCodeMexico = WORLDBANK.MEX.indicators;
-let SearchIndexCodeBrasil = WORLDBANK.BRA.indicators;
-let SearchIndexCodeChile = WORLDBANK.CHL.indicators;
+/* Funcion que pinta la lista de indicadores en HTML dinamicamente*/
+let paintingList = (data, id) => {
+  let string = '';
+  data.forEach((elem, indi) => {
+    string += `<li id=${elem.indicatorName}><a id=${elem.indicatorCode} href="#">${elem.indicatorName}</a></li>`;
+  });
+  document.getElementById(id).innerHTML = string;
+};
 
-let searching=(indicatorname,indicatorcode,type,country)=>{
-  country.forEach((elem, indi) => {
-    if (country[indi].indicatorCode === indicatorcode) {
-      let newindex = indi;
-     console.log(newindex.toString());
-      let li = document.createElement('li');
-      let a = document.createElement('a');
-      a.innerHTML = indicatorname;
-      li.id = indicatorname;
-      a.id = indicatorcode;
-      a.href = '#';
-      a.name = newindex.toString();
-      /*li.innerHTML=indicatorname;*/
-      document.getElementById(type).appendChild(li);
-      document.getElementById(indicatorname).appendChild(a);
+/* Clickear un país y obtener ID, que puede ser 'PER', 'CHL', 'BRA', 'MEX' para obtener sus indicadores */
+let pais = '';
+let tipoIndicador = '';
+
+document.body.addEventListener('click', (event) => {
+  if (event.target.tagName === 'LI') {
+    if (tipoIndicador !== '') {
+      document.getElementById('listSL').innerHTML = '';
+      document.getElementById('listHD').innerHTML = '';
+      document.getElementById('listSG').innerHTML = '';
+      document.getElementById('listSE').innerHTML = '';
+      document.getElementById('listSP').innerHTML = '';
+      document.getElementById('listIC').innerHTML = '';
+      document.getElementById('listSH').innerHTML = '';
+      document.getElementById('listper').innerHTML = '';
+      document.getElementById('listMS').innerHTML = '';
     }
-  });
-}
-
-document.getElementById('Empleo').addEventListener('click',()=>{
-showscreenempleo();
+    tipoIndicador = '';
+    pais = event.target.id;
+    console.log(pais);
+    showscreencountry();
+    screenpresentationperu.classList.add('show');
+    screenSelectCountry.classList.add('show');
+  } else if (event.target.tagName === 'A') {
+    tipoIndicador = event.target.id;
+    console.log(tipoIndicador);
+  }
+  if (pais !== '') {
+    const indicadoresPorPaisyTipo = createdatanew(WORLDBANK, pais, tipoIndicador);
+    console.log(indicadoresPorPaisyTipo);
+    // const idElementoLi = `list${tipoIndicador}`;
+    // console.log(idElementoLi);
+    if (tipoIndicador.length === 2 || tipoIndicador.length === 3) {
+      const idElementoLi = `list${tipoIndicador}`;
+      console.log(idElementoLi);
+      paintingList(indicadoresPorPaisyTipo, idElementoLi);
+    }
+    if (tipoIndicador.length > 2) {
+      const idElementoLi = tipoIndicador;
+      console.log(idElementoLi);
+      const dataDeCodigoIndicador = createdatanew(WORLDBANK, pais, idElementoLi);
+      const createDataForTablas = dataDeCodigoIndicador[0].data;
+      const indicatorName = dataDeCodigoIndicador[0].indicatorName;
+      console.log(indicatorName);
+      const newdata = CreateArray(createDataForTablas);
+      console.log(newdata);
+      createGrafic(newdata, indicatorName);
+    }
+  }
 });
 
-let addLiSL = (dataSL) => {
-  dataSL.forEach(function (ele, ind) {
-    let indicatorname = dataSL[ind].indicatorName;
-    let indicatorcode = dataSL[ind].indicatorCode;
-    searching(indicatorname,indicatorcode,'listSL',SearchIndexCodePeru); 
-  });
-};
 
-let addLiSE = (dataSE) => {
-  dataSE.forEach(function (ele, ind) {
-    let indicatorname = dataSE[ind].indicatorName;
-    let indicatorcode = dataSE[ind].indicatorCode;
-    searching(indicatorname,indicatorcode,'listSE',SearchIndexCodePeru); 
-  });
-};
-
-let addLiHD = (dataHD) => {
-  dataHD.forEach(function (ele, ind) {
-    let indicatorname = dataHD[ind].indicatorName;
-    let indicatorcode = dataHD[ind].indicatorCode;
-    searching(indicatorname,indicatorcode,'listHD',SearchIndexCodePeru); 
-  });
-};
-
-let addLiSG = (dataSG) => {
-  dataSG.forEach(function (ele, ind) {
-    let indicatorname = dataSG[ind].indicatorName;
-    let indicatorcode = dataSG[ind].indicatorCode;
-    searching(indicatorname,indicatorcode,'listSG',SearchIndexCodePeru); 
-  });
-};
-
-let addLiSP = (dataSP) => {
-  dataSP.forEach(function (ele, ind) {
-    let indicatorname = dataSP[ind].indicatorName;
-    let indicatorcode = dataSP[ind].indicatorCode;
-    searching(indicatorname,indicatorcode,'listSP',SearchIndexCodePeru); 
-  });
-};
-
-let addLiIC = (dataIC) => {
-  dataIC.forEach(function (ele, ind) {
-    let indicatorname = dataIC[ind].indicatorName;
-    let indicatorcode = dataIC[ind].indicatorCode;
-    searching(indicatorname,indicatorcode,'listIC',SearchIndexCodePeru); 
-  });
-};
-
-let addLiper = (dataper) => {
-  dataper.forEach(function (ele, ind) {
-    let indicatorname = dataper[ind].indicatorName;
-    let indicatorcode = dataper[ind].indicatorCode;
-    searching(indicatorname,indicatorcode,'listper',SearchIndexCodePeru); 
-  });
-};
-
-let addLiMS = (dataMS) => {
-  dataMS.forEach(function (ele, ind) {
-    let indicatorname = dataMS[ind].indicatorName;
-    let indicatorcode = dataMS[ind].indicatorCode;
-    searching(indicatorname,indicatorcode,'listMS',SearchIndexCodePeru); 
-  });
-};
-
-let addLiSH = (dataSH) => {
-  dataSH.forEach(function (ele, ind) {
-    let indicatorname = dataSH[ind].indicatorName;
-    let indicatorcode = dataSH[ind].indicatorCode;
-    searching(indicatorname,indicatorcode,'listSH',SearchIndexCodePeru); 
-  });
-};
-
-let indicatordataperu = WORLDBANK.PER.indicators;
-
-let createdata=(indicatorcountry)=> {
-let dataSE= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('SE')===true));
-let dataSL= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('SL')===true));
-let dataHD= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('HD')===true));
-let dataSP= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('SP')===true));
-let dataIC= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('IC')===true));
-let dataSH= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('SH')===true));
-let dataSG= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('SG')===true));
-let dataper= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('per')===true));
-let dataMS= indicatorcountry.filter(dataind => (dataind.indicatorCode.startsWith('MS')===true));
-addLiHD(dataHD); addLiIC(dataIC); addLiMS(dataMS); addLiSE(dataSE); addLiSG(dataSG); addLiSH(dataSH); addLiSL(dataSL); addLiSP(dataSP); addLiper(dataper);
-}
-
-/*clickear Peru*/
-let clickPeru = document.getElementById('peru');
-let contPeru=0;
-
-clickPeru.addEventListener('click', () => {
-  let indicatordataperu = WORLDBANK.PER.indicators;
-  showscreencountry();
-  screenpresentationperu.classList.add('show');
-  screenSelectCountry.classList.add('show');
-  if(contPeru===0)
-  { createdata(indicatordataperu);
-    contPeru++;}
-});
-/*clickear Peru*/
-
-
-document.getElementById('listAllindicators').addEventListener('click',(e) => {
-console.log(e.target.id);
-document.getElementById('listSL').addEventListener('click', (e) => {
-  console.log(e.target.id);
- codeindicatortable=e.target.id;
- SearchIndexCodePeru.forEach((elem, indi) => {
-  if (SearchIndexCodePeru[indi].indicatorCode === codeindicatortable) {
-   let indextable=indi;
-   let nameindicator=SearchIndexCodePeru[indi].indicatorName;
-   let matrizIndicator = new Array(Object.entries(WORLDBANK.PER.indicators[indextable].data));
-   let inmatriz = matrizIndicator[0];
-   inmatriz.forEach(function (ele, ind) {
-     inmatriz[ind][0] = parseInt(inmatriz[ind][0]);
-     inmatriz[ind][1] = parseFloat(inmatriz[ind][1]);  
-   });
-   
-let datanew= inmatriz.filter(dataind => isNaN(dataind[1])===false);
-console.log(datanew);
-
-   document.getElementById('indicatorName').innerHTML=nameindicator;
-   let multirange= document.getElementById('multirange');
-
-   multirange.innerHTML = `<div class='multi-range' data-lbound='${datanew[0][0]}' data-ubound='${datanew[datanew.length-1][0]}' id="rango">
+let createGrafic = (newdata, indicatorName) => {
+  document.getElementById('indicatorName').innerHTML = indicatorName;
+  let multirange = document.getElementById('multirange');
+  multirange.innerHTML = `<div class='multi-range' data-lbound='${newdata[0][0]}' data-ubound='${newdata[newdata.length - 1][0]}' id="rango">
    <hr/>
-   <input type='range' id="lbound"  min='${datanew[0][0]}' max='${datanew[datanew.length-2][0]}' step='1' value='${datanew[0][0]}'   
+   <input type='range' id="lbound"  min='${newdata[0][0]}' max='${newdata[newdata.length - 2][0]}' step='1' value='${newdata[0][0]}'
           oninput='this.parentNode.dataset.lbound=this.value'
           />
-   <input type='range'  id="ubound"  min='${datanew[1][0]}' max='${datanew[datanew.length-1][0]}' step='1' value='${datanew[datanew.length-1][0]}' 
+   <input type='range'  id="ubound"  min='${newdata[1][0]}' max='${newdata[newdata.length - 1][0]}' step='1' value='${newdata[newdata.length - 1][0]}'
           oninput='this.parentNode.dataset.ubound=this.value'
           />
    </div>`;
+  const rangoInput = document.getElementById('rango');
 
-   const rangoInput = document.getElementById('rango');
-   
-   rangoInput.addEventListener('change', (e)=>{
-   let min;
-   let max;
-   let lboun=0;
-   let uboun=0;
-    
-   if(e.target.id === 'lbound'){
-     lboun++;
-      min = e.target.value;
-     }  else {
+  rangoInput.addEventListener('change', (event) => {
+    let min;
+    let max;
+    let lboun = 0;
+    let uboun = 0;
+    if (event.target.id === 'lbound') {
+      lboun++;
+      min = event.target.value;
+    } else {
       uboun++;
-      max = e.target.value;
-     } 
-   
-   if(lboun===0){
-     min=document.getElementById('lbound').value;
-   }  
-   if(uboun===0){
-    max=document.getElementById('ubound').value;
-  } 
-  
-    drawBasic2(datanew,min,max);drawTable(datanew,min,max);drawTableorder(datanew,min,max);
-   });   
+      max = event.target.value;
+    }
 
-  }
-});
-document.getElementById('cont').classList.remove('cont');
-document.getElementById('cont').classList.add('newcont');
-showscreenResult();
-screenchart.classList.add('show');
-screencountry.classList.add('show');
-});
-
-}) ;
-
+    if (lboun === 0) {
+      min = document.getElementById('lbound').value;
+    }
+    if (uboun === 0) {
+      max = document.getElementById('ubound').value;
+    }
+    drawBasic2(newdata, min, max); drawTable(newdata, min, max); drawTableorder(newdata, min, max);
+  });
+  document.getElementById('cont').classList.remove('cont');
+  document.getElementById('cont').classList.add('newcont');
+  showscreenResult();
+  screenchart.classList.add('show');
+  screencountry.classList.add('show');
+};
