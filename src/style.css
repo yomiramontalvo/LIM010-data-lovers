@@ -51,6 +51,45 @@ padding: 70px 0px 0px;
 /*LOGIN*/
 
 /*Screen Noticias*/
+#banner h1{
+  font-size: 22px;
+}
+   #banner .contenedor{
+  font-size: 15px;
+  background-size: cover;
+  padding: 15px;
+
+}
+.contenedor-bm{
+  font-size: 20px;
+}
+
+
+.pais{
+  font-size: 20px;
+}
+.who{
+  width: 100%;
+}
+
+.info-descrip{
+ font-size: 10px;
+  width: 50%;
+ 
+}
+
+.mision h3{
+  font-size: 30px;
+  }
+  .datos {
+  
+    font-size: 30px; }
+    #info-colum{
+
+    width: 300px;
+    height: 200px;
+}
+
 
 /*Screen Noticias*/
 
@@ -100,15 +139,15 @@ font-weight: bold;
 }
 
 .menu ul li ul li{
-  padding:10px;
+  padding:5px;/**/
   position: relative;
-  width: 280px;
+  width: -webkit-fill-available; /**/
   background-color: #566573  ;
   border-top: 1px solid #BDC3C7;
 }
 
 .menu ul li ul li a{
-font-size: 15px; 
+font-size: 10px; /**/
 color: #FFF;
 }
 
@@ -124,8 +163,9 @@ padding: 5px;/* */
   visibility: hidden;
   left: 100%;
   top:-2%;
- max-height: 23em;
+  max-height: 23em;
   overflow-y: auto;
+  z-index: 100;
 }
 
 .titleindicators {
@@ -139,6 +179,7 @@ font-size: 14px; /* */
   font-style: regular;
   font-size: 27px;
   color:#000000;
+  font-weight: bold;
   }
 /*Show grafic*/
 .contSelect {
@@ -148,7 +189,7 @@ font-size: 14px; /* */
 
 /*Presentation Peru*/
 
-#presentationPER slider{
+slider{
    width: 73%; /**/
   height: 28%;/**/
 }
@@ -256,7 +297,35 @@ padding: 70px 0px 0px;
 /*LOGIN*/
 
 /*Screen Noticias*/
+#banner h1{
+  font-size: 42px;
+}    
+#banner .contenedor{
+  font-size: 20px;
+  padding: 15px;
+}
+.info{
+  display: flex;
+  justify-content: space-between;
+  margin-top: -90px;
+}
+.info-colum{
+  width: 48%;
+}
 
+.pais{
+  font-size: 30px;
+  padding: 3px;
+}
+.who{
+  width: 100%;
+}
+
+.info-descrip{
+font-size: 15px;
+width: 70%;
+
+}
 
 /*Screen Noticias*/
 
@@ -330,6 +399,7 @@ padding: 10px;
     top:-2%;
    max-height: 23em;
     overflow-y: auto;
+    z-index:100;
 }
 
 .titleindicators {
@@ -355,7 +425,7 @@ font-size: 23px;
 
 
 /*presentation peru*/
-#presentationPER slider{
+slider{
   width: 80%;
   height: 50%;
 }
@@ -379,7 +449,7 @@ text-align: center;
 }
 
 #ScreenResult {
-  width: 100%;
+  width: 60%;
   margin:10px 10%;
 }
 
@@ -651,6 +721,8 @@ slide p{
   
   .newcont{
       display: flex;
+     /* justify-content: flex-end;
+      flex-direction:row-reverse;*/
   }
 
 @keyframes slide{
@@ -662,33 +734,35 @@ slide p{
     100%{ left: 100%; width: 0%;}
 }
 
+slider{
+  margin: 10px 2.5%;
+  border-radius: 20px;
+}
+
+slider > *{
+position: absolute;
+display: block;
+width: 100%;
+height: 100%;
+background: #FFF;
+animation: slide 30s infinite;
+overflow: hidden;
+}
+
 /*Slider*/
 
 /*Presentation Peru*/
-#presentationPER slider{
-    margin: 10px 2.5%;
-    border-radius: 20px;
-}
-#presentationPER slider{
-  display: block;
-  background-image: url(img/Peru5.jpg);
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position: 50% 20%;
-  overflow: hidden;
-  position: absolute;
-}
-
-  #presentationPER slider > *{
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: #FFF;
-  animation: slide 30s infinite;
-  overflow: hidden;
+  
+  #presentationPER slider{
+    display: block;
+    background-image: url(img/Peru5.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: 50% 20%;
+    overflow: hidden;
+    position: absolute;
   }
-    
+
   #presentationPER slider slide:nth-child(1){
   left: 0%;
   animation-delay: 0s;
@@ -739,8 +813,190 @@ slide p{
 
 /*Presentation Peru*/
 
+/*Presentacion CHL*/
 
+#presentationCHL slider{
+  display: block;
+  background-image: url(img/Peru5.jpg);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position: 50% 20%;
+  overflow: hidden;
+  position: absolute;
+}
 
+#presentationCHL slider slide:nth-child(1){
+left: 0%;
+animation-delay: 0s;
+background-image: url(img/Peru1.jpeg);
+background-size: cover;
+background-position: center;
+text-align: center;
+display:flex;
+justify-content: left;
+align-items:flex-end;
+}
+
+#presentationCHL slider slide:nth-child(2){
+left: 0%;
+animation-delay: -5s;
+background-image: url(img/Peru2.jpeg);
+background-size: cover;
+background-position: 50% 0%;
+text-align: center;
+display:flex;
+justify-content: left;
+align-items:flex-end;
+}
+
+#presentationCHL slider slide:nth-child(3){
+left: 0%;
+animation-delay: -10s;
+background-image: url(img/Peru3.jpg);
+background-size: cover;
+background-position: 40% 20%;
+text-align: center;
+display:flex;
+justify-content: left;
+align-items:flex-end;
+}
+
+#presentationCHL slider slide:nth-child(4){
+left: 0%;
+animation-delay: -15s;
+background-image: url(img/Peru4.jpg);
+background-size: cover;
+background-position: 40% 30%;
+text-align: center;
+display:flex;
+justify-content: left;
+align-items:flex-end;
+} 
+
+/*Presentacion CHL*/
+
+/*Presentacion MEX*/
+
+#presentationMEX slider{
+  display: block;
+  background-image: url(img/Peru5.jpg);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position: 50% 20%;
+  overflow: hidden;
+  position: absolute;
+}
+
+#presentationMEX slider slide:nth-child(1){
+left: 0%;
+animation-delay: 0s;
+background-image: url(img/Peru1.jpeg);
+background-size: cover;
+background-position: center;
+text-align: center;
+display:flex;
+justify-content: left;
+align-items:flex-end;
+}
+
+#presentationMEX slider slide:nth-child(2){
+left: 0%;
+animation-delay: -5s;
+background-image: url(img/Peru2.jpeg);
+background-size: cover;
+background-position: 50% 0%;
+text-align: center;
+display:flex;
+justify-content: left;
+align-items:flex-end;
+}
+
+#presentationMEX slider slide:nth-child(3){
+left: 0%;
+animation-delay: -10s;
+background-image: url(img/Peru3.jpg);
+background-size: cover;
+background-position: 40% 20%;
+text-align: center;
+display:flex;
+justify-content: left;
+align-items:flex-end;
+}
+
+#presentationMEX slider slide:nth-child(4){
+left: 0%;
+animation-delay: -15s;
+background-image: url(img/Peru4.jpg);
+background-size: cover;
+background-position: 40% 30%;
+text-align: center;
+display:flex;
+justify-content: left;
+align-items:flex-end;
+} 
+
+/*Presentacion MEX*/
+/*Presentacion BRA*/
+
+#presentationBRA slider{
+  display: block;
+  background-image: url(img/Peru5.jpg);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position: 50% 20%;
+  overflow: hidden;
+  position: absolute;
+}
+
+#presentationBRA slider slide:nth-child(1){
+left: 0%;
+animation-delay: 0s;
+background-image: url(img/Peru1.jpeg);
+background-size: cover;
+background-position: center;
+text-align: center;
+display:flex;
+justify-content: left;
+align-items:flex-end;
+}
+
+#presentationBRA slider slide:nth-child(2){
+left: 0%;
+animation-delay: -5s;
+background-image: url(img/Peru2.jpeg);
+background-size: cover;
+background-position: 50% 0%;
+text-align: center;
+display:flex;
+justify-content: left;
+align-items:flex-end;
+}
+
+#presentationBRA slider slide:nth-child(3){
+left: 0%;
+animation-delay: -10s;
+background-image: url(img/Peru3.jpg);
+background-size: cover;
+background-position: 40% 20%;
+text-align: center;
+display:flex;
+justify-content: left;
+align-items:flex-end;
+}
+
+#presentationBRA slider slide:nth-child(4){
+left: 0%;
+animation-delay: -15s;
+background-image: url(img/Peru4.jpg);
+background-size: cover;
+background-position: 40% 30%;
+text-align: center;
+display:flex;
+justify-content: left;
+align-items:flex-end;
+} 
+
+/*Presentacion BRA*/
 
 .multi-range, .multi-range * { box-sizing: border-box; padding: 0; margin: 0; }
 .multi-range { 
@@ -765,4 +1021,196 @@ slide p{
     display: block; padding: 0px 4px; margin: -1px 2px;
     height: 26px; width: auto; border: 1px solid #ddd; 
     font-size: 13px; line-height: 26px;
+}
+
+#banner{
+  width: 100%;
+  margin-bottom: 25px;
+  position: relative;
+  }
+
+
+ .contenedor{
+    background-image:url(img/1.1.png);
+    padding: 50px;
+    color: #fff;
+    background-size: cover;
+    font-family: 'Open Sans',sans-serif;
+  }
+
+.contenedor-bm{
+background: rgba(0, 0, 0, 0.5);
+padding: 10px;
+}
+  
+
+  #banner a {
+    display: block;
+    width:  100px;
+    color: #fff;
+    text-decoration: none;
+    padding: 2px;
+    margin-top: 10px;
+    border: 3px solid #fff;
+  }
+  #banner a:hover {
+    background: rgba (51,51,51,0.5);
+  }
+
+
+.titu{
+  text-align: center;
+  font-size: 40px;
+  color: #0071BC;
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+#info-colum{
+  background-size: cover;
+  width: 20%;
+  height: 30%;
+  margin: 20px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: #fff;
+  padding: 0px;
+  font-weight: bolder;
+  font-family: 'Open Sans',sans-serif;
+  width: 35%;
+}
+
+.info-colum1{
+      background-image: url(img/info1.jpg); 
+     
+}
+.info-colum2{
+  background-image: url(img/info2.jpg); 
+ 
+
+}
+.info-colum3{
+  background-image: url(img/info3.jpg); 
+  
+}
+.info-colum4{
+  background-image: url(img/info4.jpg); 
+ 
+}
+
+.info-descrip{
+ 
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  height: 90%;
+  font-family: 'Open Sans', sans-serif;
+  padding: 10px;
+}
+/*
+.descrip-titu{
+  font-size: 25px;
+  margin: 5px 0;
+  background: #fff;
+}
+.info-img{
+width: -webkit-fill-available;
+margin: -10px;
+}}*/
+.link{
+  display: block;
+    width:  100px;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px;
+    margin-top: 10px;
+    border: 3px solid #fff;
+}
+
+
+
+  #info{
+       width: 100%;
+      height: auto;
+      background: #fff;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-flow: wrap;
+      margin-bottom: 50px;
+    }
+
+
+  .titu{
+    width: 100%
+  }
+ 
+    .mision{
+      background-color: #009fda;
+      padding: 50px;
+      color: #fff;
+      text-align: center;
+      font-family: 'Open Sans',sans-serif;
+      padding: 3%;
+    }
+    .mision h2{
+      font-size: 40px; 
+      color: #fff;
+    }  
+    .mision h3{
+      font-size: 20px;
+    }
+    
+  #dat{
+    color: #0071BC;
+    font-family: 'Open Sans',sans-serif;
+    text-align: center;
+    padding: 2%;
+  }
+    .dato{
+      font-size: 40px;  
+    }
+    .datos{     
+      font-size: 20px;
+      color: #0071BC;
+    }
+  
+    .bloque{
+      width: 100%;
+      height: auto;
+      background: #fff;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-flow: wrap;
+      margin-bottom: 50px;
+    }
+  
+    .pais{
+  
+      background-color: #0071BC; 
+      width: 20%;
+      height: 50px;
+      margin: 20px;
+      box-sizing: border-box;
+      border-radius: 3px;
+      color: #fff;
+      padding: 10px;
+      font-weight: bolder;
+      font-family: 'Open Sans',sans-serif;
+      text-align: center;
+    }
+
+.footer{
+  background: #0071BC;
+  opacity: 0.5;
+  color: #fff;
+  padding: 10px;
+  text-align: end;
+}
+.footer .foot{
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+  padding: 10px;
+  line-height: 40px;
 }

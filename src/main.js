@@ -3,9 +3,13 @@
 let screenLogin = document.getElementById('botonLogin');
 let screenSelectCountry = document.getElementById('screenSelectCountry');
 let screenpresentationPER = document.getElementById('presentationPER');
+let screenpresentationCHL = document.getElementById('presentationCHL');
+let screenpresentationMEX = document.getElementById('presentationMEX');
+let screenpresentationBRA = document.getElementById('presentationBRA');
 let screencountry = document.getElementById('screencountry');
 let screenchart = document.getElementById('chart');
 let screenResult = document.getElementById('ScreenResult');
+let screenNot = document.getElementById('not');
 /* Login */
 let EnterLogin = document.getElementById('EnterLogin');
 let user = document.getElementById('user');
@@ -26,13 +30,31 @@ const hideallscreens = () => {
   screencountry.classList.remove('show');
   screenchart.classList.remove('show');
   screenpresentationPER.classList.remove('show');
+  screenpresentationMEX.classList.remove('show');
+  screenpresentationCHL.classList.remove('show');
+  screenpresentationBRA.classList.remove('show');
   screenResult.classList.remove('show');
+  screenNot.classList.remove('show');
   screenLogin.classList.add('hide');
   screenSelectCountry.classList.add('hide');
   screencountry.classList.add('hide');
   screenchart.classList.add('hide');
   screenpresentationPER.classList.add('hide');
+  screenpresentationMEX.classList.add('hide');
+  screenpresentationCHL.classList.add('hide');
+  screenpresentationBRA.classList.add('hide');
   screenResult.classList.add('hide');
+  screenNot.classList.add('hide');
+};
+
+const showscreenenterLogin = () => {
+  hideallscreens();
+  screenSelectCountry.classList.add('show');
+  document.getElementById('body').classList.add('bodySelectCountry');
+  document.getElementById('body').classList.remove('bodyLogin');
+  document.getElementById('Head').classList.remove('hide');
+  screenNot.classList.remove('hide');
+  screenNot.classList.add('show');
 };
 
 const showscreenLogin = () => {
@@ -40,14 +62,13 @@ const showscreenLogin = () => {
   screenLogin.classList.add('show');
 };
 
-const showscreenSelectCountry = () => {
+/* const showscreenSelectCountry = () => {
   hideallscreens();
   screenSelectCountry.classList.add('show');
-};
+}; */
 
 const showscreencountry = () => {
   hideallscreens();
-  screencountry.classList.add('show');
 };
 
 const showscreenchart = () => {
@@ -69,6 +90,7 @@ const showscreenpresentationPER = () => {
 
 const showscreenResult = () => {
   hideallscreens();
+  screencountry.classList.add('show');
   screenSelectCountry.classList.add('show');
   screenResult.classList.add('show');
 };
@@ -87,14 +109,7 @@ EnterLogin.addEventListener('click', () => {
   let userresult = user.value;
   let passwordresult = password.value;
   if (userresult === '1' && passwordresult === '1') {
-    document.getElementById('body').classList.add('bodySelectCountry');
-    document.getElementById('body').classList.remove('bodyLogin');
-    document.getElementById('Head').classList.remove('hide');
-    showscreenSelectCountry();
-    screenbanner.classList.remove('hide');
-    screeninfo.classList.remove('hide');
-    screenbanner.classList.add('show');
-    screeninfo.classList.add('show');
+    showscreenenterLogin();
   } else {
     user.value = '';
     password.value = '';
@@ -133,19 +148,30 @@ document.body.addEventListener('click', (event) => {
       tipoIndicador = '';
       pais = event.target.id;
       console.log(pais);
-      showscreencountry();
-      screenpresentationPER.classList.add('show');
+      hideallscreens();
+      document.getElementById('cont').classList.remove('newcont');
+      document.getElementById('cont').classList.add('cont');
+      if (pais === 'PER') {
+        screenpresentationPER.classList.add('show');
+      }
+      if (pais === 'CHL') {
+        screenpresentationCHL.classList.add('show');
+      }
+      if (pais === 'MEX') {
+        screenpresentationMEX.classList.add('show');
+      }
+      if (pais === 'BRA') {
+        screenpresentationBRA.classList.add('show');
+      }
       screenSelectCountry.classList.add('show');
+      screencountry.classList.add('show');
     } else if (event.target.tagName === 'A') {
       tipoIndicador = event.target.id;
       console.log(tipoIndicador);
-    }
-    if (pais !== '') {
+    } if (pais !== '') {
       console.log(pais);
       const indicadoresPorPaisyTipo = createdatanew(WORLDBANK, pais, tipoIndicador);
       console.log(indicadoresPorPaisyTipo);
-      // const idElementoLi = `list${tipoIndicador}`;
-      // console.log(idElementoLi);
       if (tipoIndicador.length === 2 || tipoIndicador.length === 3) {
         const idElementoLi = `list${tipoIndicador}`;
         console.log(idElementoLi);
@@ -153,21 +179,19 @@ document.body.addEventListener('click', (event) => {
       } else if (tipoIndicador.length > 3) {
         console.log(tipoIndicador);
         const idElementoLi = tipoIndicador;
-        console.log(idElementoLi);
         const dataDeCodigoIndicador = createdatanew(WORLDBANK, pais, idElementoLi);
         const createDataForTablas = dataDeCodigoIndicador[0].data;
-        //  console.log(createDataForTablas);
         const indicatorName = dataDeCodigoIndicador[0].indicatorName;
         console.log(indicatorName);
         const newdata = CreateArray(createDataForTablas);
         console.log(newdata);
+        showscreenResult();
         createGrafic(newdata, indicatorName);
         drawBasic2(newdata, newdata[0][0], newdata[newdata.length - 1][0]);
-        document.getElementById('cont').classList.remove('cont');
-        document.getElementById('cont').classList.add('newcont');
+        /*   document.getElementById('cont').classList.remove('cont');
+        document.getElementById('cont').classList.add('newcont');*/
         showscreenResult();
         screenchart.classList.add('show');
-        screencountry.classList.add('show');
       }
     }
   }

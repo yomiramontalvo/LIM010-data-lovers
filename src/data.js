@@ -51,7 +51,6 @@ let drawBasic2 = (data1, min, max) => {
   chartnormal.draw(data, options);
 };
 
-
 let drawTable = (data1, min, max) => {
   let datafilter = data1.filter(datanew => (datanew[0] >= min && datanew[0] <= max));
   var data = new google.visualization.DataTable();
