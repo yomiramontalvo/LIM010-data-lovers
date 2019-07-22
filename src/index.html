@@ -6,31 +6,31 @@
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body id="body" class="bodyLogin">
+<body id="body" class="body-login">
 <!--HEADER-->
-  <header id="Head" class="hide">
+  <header id="head" class="hide">
    <section class="order">
     <div class="head" >Latin Data</div>
-    <img class="logohead" src="img/Logo.png"/>
+    <img class="logo-head" src="img/Logo.png" alt="imagen logotipo"/>
   </section>  
-    <section id="screenSelectCountry" class="hide">
+    <section id="screen-select-country" class="hide">
       <div class="selectcountry"><h>Seleccionar país</h></div>
       <div id="countries" class="hide">           
           <ul id="pais">
-              <li id="PER">Perú</li>
-              <li id="CHL">Chile</li>
-              <li id="MEX">México</li>
-              <li id="BRA">Brasil</li>
+              <li id="per">Perú</li>
+              <li id="chl">Chile</li>
+              <li id="mex">México</li>
+              <li id="bra">Brasil</li>
             </ul>
           </div>  
     </section>
    </header>
     <!---ScreenLogin--> 
-    <section id="botonLogin" class="masterLogin">
-      <section class="backgroundLogin">
-        <div class="AllLogo">
-          <img class="Logo" src="img/Logo.png" />
-          <div id="Login">Latin Data</div>
+    <section id="boton-login" class="master-login">
+      <section class="background-login">
+        <div class="all-logo">
+          <img class="logo" src="img/Logo.png" alt = "logo del banco mundial"/>
+          <div id="login">Latin Data</div>
         </div>
         <form>
           <section class="register">
@@ -42,18 +42,18 @@
             <input class="writeuser" type="password" id="password">
           </section>
           <section class="buttonentry">
-            <input class="buttonLogin" type="button" value="INGRESAR" id="EnterLogin">
+            <input class="buttonlogin" type="button" value="INGRESAR" id="enterlogin">
           </section>
           <!-- <a href="">¿Olvidaste Contraseña?</a></br>
           <a href="">¿No tienes una cuenta?<strong> Registrate</strong></a><br/></a><br/>-->
-          <p id="mistakeLogin" class="error"></p>
+          <p id="mistakelogin" class="error"></p>
         </form>
       </section>
     </section>
 
 <!---ScreenNoticias-->
 <section id="not" class="hide">
-  <section id="banner" class='bank'>
+  <section id="banner" class="bank">
     <div class="contenedor">
       <div class="contenedor-bm">
         <h1> Banco Mundial</h1>
@@ -66,7 +66,7 @@
 
   <section id="info" >
     <h2 class="titu">NOTICIAS</h2>
-    <div id="info-colum" class="info-colum1">
+    <div  class="info-colum info-colum1">
 
       <div class="info-descrip">
         <h3 class="decrip-titu">El empleo, núcleo del desarrollo:</h3>
@@ -76,7 +76,7 @@
       </div>
     </div>
 
-    <div id="info-colum" class="info-colum2">
+    <div  class="info-colum info-colum2">
 
       <div class="info-descrip">
         <h3 class="decrip-titu">Fin a la violencia en América Latina:</h3>
@@ -86,7 +86,7 @@
       </div>
     </div>
 
-    <div id="info-colum" class="info-colum3">
+    <div  class="info-colum info-colum3">
 
       <div class="info-descrip">
         <h3 class="decrip-titu">Combate a la desnutrición en Perú: </h3>
@@ -96,7 +96,7 @@
           href="https://www.bancomundial.org/es/results/2018/04/03/stronger-open-trade-policies-enables-economic-growth-for-all">Más</a>
       </div>
     </div>
-    <div id="info-colum" class="info-colum4">
+    <div  class="info-colum info-colum4">
       <div class="info-descrip">
         <h3 class="decrip-titu">Mejorar los sistemas de información del agua y el saneamiento: </h3>
         <p class="text">En lugares rurales de América Latina y el Caribe</p>
@@ -130,8 +130,8 @@
 <!---ScreenNoticias-->
     <main id="main">
     <div id="cont" class="cont">
-      <div  id="presentationPER" class="sli hide">
-     <section class="contSelect" >
+      <div  id="presentationper" class="sli hide">
+     <section class="contselect" >
         <p>Conoce el flujo de los Indicadores de Perú al seleccionar un indicador</p>
     </section>
         <slider>
@@ -145,8 +145,8 @@
           </slide>
         </slider>
       </div>
-      <div  id="presentationCHL" class="sli hide">
-        <section class="contSelect" >
+      <div  id="presentationchl" class="sli hide">
+        <section class="contselect" >
            <p>Conoce el flujo de los Indicadores de Perú al seleccionar un indicador</p>
        </section>
            <slider>
@@ -160,8 +160,8 @@
              </slide>
            </slider>
          </div>
-         <div  id="presentationMEX" class="sli hide">
-          <section class="contSelect" >
+         <div  id="presentationmex" class="sli hide">
+          <section class="contselect" >
              <p>Conoce el flujo de los Indicadores de Perú al seleccionar un indicador</p>
          </section>
              <slider>
@@ -175,8 +175,8 @@
                </slide>
              </slider>
            </div>
-           <div  id="presentationBRA" class="sli hide">
-            <section class="contSelect" >
+           <div  id="presentationbra" class="sli hide">
+            <section class="contselect" >
                <p>Conoce el flujo de los Indicadores de Perú al seleccionar un indicador</p>
            </section>
                <slider>
@@ -196,49 +196,49 @@
       </section> 
         <div class="mainmenu">
           <div class="menu">
-          <ul id="listAllindicators">
-          <li><a class="titletypeindicator" id="SL" class="hide" href="#">Empleo</a>
-            <ul id="listSL">
+          <ul id="list-all-indicators">
+          <li><a  class="title-type-indicator"  id="sl" href="#">Empleo</a>
+            <ul id="listsl">
             </ul>
           </li>
-          <li><a class="titletypeindicator" id="HD" class="hide" href="#">Desarrollo Social</a>
-          <ul id="listHD">
+          <li><a class="title-type-indicator" id="hd" href="#">Desarrollo Social</a>
+          <ul id="listhd">
           </ul></li>
-          <li><a class="titletypeindicator" id="SG" class="hide"  href="#">Género</a>
-          <ul id="listSG"></li>
-          </ul>
-         <li><a class="titletypeindicator" id="SE" class="hide" href="#">Educación</a>
-          <ul id="listSE"></li>
-          </ul>
-         <li><a class="titletypeindicator" id="SP" class="hide" href="#">Población</a>
-          <ul id="listSP"></li>
-          </ul>
-          <li><a class="titletypeindicator" id="IC" class="hide" href="#">Sector Privado</a>
-          <ul id="listIC"></li>
-          </ul>
-          <li><a class="titletypeindicator" id="SH" class="hide" href="#">Salud</a>
-          <ul id="listSH"></li>
-          </ul>
-          <li><a class="titletypeindicator" id="per"class="hide"  href="#">Protección Social</a>
-          <ul id="listper"></li>
-          </ul>
-          <li><a class="titletypeindicator" id="MS" class="hide" href="#">Sector Público</a>
-          <ul id="listMS"></li>
-          </ul>
+          <li><a class="title-type-indicator" id="sg"  href="#">Género</a>
+          <ul id="listsg">
+          </ul></li>
+         <li><a class="title-type-indicator" id="se" href="#">Educación</a>
+          <ul id="listse">
+          </ul></li>
+         <li><a class="title-type-indicator" id="sp" href="#">Población</a>
+          <ul id="listsp">
+          </ul></li>
+          <li><a class="title-type-indicator" id="ic" href="#">Sector Privado</a>
+          <ul id="listic">
+          </ul></li>
+          <li><a class="title-type-indicator" id="sh" href="#">Salud</a>
+          <ul id="listsh">
+          </ul></li>
+          <li><a class="title-type-indicator" id="pro" href="#">Protección Social</a>
+          <ul id="listpro">
+          </ul></li>
+          <li><a class="title-type-indicator" id="ms" href="#">Sector Público</a>
+          <ul id="listms">
+          </ul></li>
         </ul>
       </div>
     </div>
 
   </section>
-  <section id="ScreenResult" class="hide">
+  <section id="screenresult" class="hide">
       <div>
-        <h id="indicatorName"></h>
+        <h id="indicatorname"></h>
       </div><br/>
       <div id="multirange"></div>
-      <div id="chart"></div></br>
-      <div id="table_div"></div></br>
-      <div id="table_divorderasc"></div>
-      <div id="orderchart_div"></div>
+      <div id="chart"></div><br>
+      <div id="tablediv"></div><br>
+      <div id="tabledivorderasc"></div>
+      <div id="orderchartdiv"></div>
       <div id="prom"></div>
 </section>
 </div>

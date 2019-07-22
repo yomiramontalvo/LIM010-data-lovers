@@ -1,6 +1,3 @@
-google.charts.load('current', { packages: ['corechart', 'line'] });
-
-google.charts.load('current', { 'packages': ['table'] });
 
 const getIndicatorsForCountry = (data, string) => {
   let arr = [];
@@ -13,8 +10,13 @@ const getIndicatorsForCountry = (data, string) => {
 
 const createdatanew = (data, pais, string) => {
   const arrData = data[pais].indicators;
-  let arrIndicatorsByType = arrData.filter(dataind => (dataind.indicatorCode.startsWith(string) === true));
-  return arrIndicatorsByType;
+  if (string === 'PRO') {
+    let arrIndicatorsByType = arrData.filter(dataind => (dataind.indicatorCode.startsWith('per') === true));
+    return arrIndicatorsByType;
+  } else {
+    let arrIndicatorsByType = arrData.filter(dataind => (dataind.indicatorCode.startsWith(string) === true));
+    return arrIndicatorsByType;
+  }
 };
 
 const CreateArray = (data1) => {
@@ -25,50 +27,24 @@ const CreateArray = (data1) => {
     inmatriz[ind][1] = parseFloat(inmatriz[ind][1]);
   });
   let datanew = inmatriz.filter(dataind => isNaN(dataind[1]) === false);
+  console.log(datanew);
   return datanew;
 };
 
-let drawBasic2 = (data1, min, max) => {
+const dataInGrafic = (data1, min, max) => {
   let datafilter = data1.filter(datanew => (datanew[0] >= min && datanew[0] <= max));
   console.log(datafilter);
-  var data = new google.visualization.DataTable();
-  data.addColumn('number', 'X');
-  data.addColumn('number', '% o escala');
-
-  data.addRows(datafilter);
-
-  var options = {
-    hAxis: {
-      title: 'Year'
-    },
-    vAxis: {
-      title: 'Indicator'
-    }
-  };
-
-  var chartnormal = new google.visualization.LineChart(document.getElementById('chart'));
-
-  chartnormal.draw(data, options);
+  return datafilter;
 };
 
-let drawTable = (data1, min, max) => {
+let dataInTable = (data1, min, max) => {
   let datafilter = data1.filter(datanew => (datanew[0] >= min && datanew[0] <= max));
-  var data = new google.visualization.DataTable();
-  data.addColumn('number', 'año');
-  data.addColumn('number', 'porcentaje');
-  data.addRows(datafilter);
-
-  var table = new google.visualization.Table(document.getElementById('table_div'));
-
-  table.draw(data, {
-    showRowNumber: true,
-    width: '100%',
-    height: '100%'
-  });
+  console.log(datafilter);
+  return datafilter;
 };
 
 
-let drawTableorder = (data1, min, max) => {
+let dataInTableOrder = (data1, min, max) => {
   let datafilter = data1.filter(datanew => (datanew[0] >= min && datanew[0] <= max));
   let inmatrizorder = datafilter;
 
@@ -80,24 +56,13 @@ let drawTableorder = (data1, min, max) => {
     }
   };
   inmatrizorder.sort(sortfunction);
-
-  var data = new google.visualization.DataTable();
-  data.addColumn('number', 'año');
-  data.addColumn('number', 'porcentaje');
-  data.addRows(inmatrizorder);
-
-  var table = new google.visualization.Table(document.getElementById('table_divorderasc'));
-
-  table.draw(data, {
-    showRowNumber: true,
-    width: '100%',
-    height: '100%'
-  });
+  return inmatrizorder;
 };
 
 
 window.createdatanew = createdatanew;
-window.drawBasic2 = drawBasic2;
-window.drawTable = drawTable;
-window.drawTableorder = drawTableorder;
-window.CreateArray = CreateArray; 
+window.CreateArray = CreateArray;
+window.getIndicatorsForCountry = getIndicatorsForCountry;
+window.dataInGrafic = dataInGrafic;
+window.dataInTable = dataInTable;
+window.dataInTableOrder = dataInTableOrder; 

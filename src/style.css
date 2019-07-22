@@ -23,7 +23,7 @@ text-align: center;
 justify-items: center;
 }
 
-.logohead {
+.logo-head {
  width: 1.5em;
 height: 1.5em;
 margin:0px;
@@ -33,11 +33,11 @@ margin-top:3px;
 /*HEAD*/
 
 /*LOGIN*/
-.bodyLogin {
+.body-login {
     background: #FFFFFF;
 }
 
-.backgroundLogin {
+.background-login {
 padding:82px 20px;
 }
 .buttonindicator {
@@ -84,7 +84,7 @@ padding: 70px 0px 0px;
   .datos {
   
     font-size: 30px; }
-    #info-colum{
+    .info-colum{
 
     width: 300px;
     height: 200px;
@@ -94,7 +94,7 @@ padding: 70px 0px 0px;
 /*Screen Noticias*/
 
 /*SELECT COUNTRY*/
-#screenSelectCountry{
+#screen-select-country{
     flex-direction: column;
     justify-content: center; 
     }
@@ -174,7 +174,7 @@ font-size: 14px; /* */
 /*Select Indicators */
 
 /*Show grafic*/
-.titletypeindicator {
+.title-type-indicator {
   font-family: 'Open Sans', sans-serif;
   font-style: regular;
   font-size: 27px;
@@ -182,7 +182,7 @@ font-size: 14px; /* */
   font-weight: bold;
   }
 /*Show grafic*/
-.contSelect {
+.contselect {
   height: 20%; /**/
   font-size: 15px; /**/
   }
@@ -213,7 +213,7 @@ text-align: center;
 }
 
 
-#ScreenResult {
+#screenresult {
 width: 100%;
 margin:10px 10%;
 }
@@ -249,7 +249,7 @@ margin-left: 3%;
 }
 
 
-.logohead {
+.logo-head {
 width: 70px;
 height: 70px;
 margin:0px;
@@ -263,7 +263,7 @@ padding:0;
 /*header*/
 
 /*LOGIN*/
-.bodyLogin {
+.body-login {
 margin:25px;
 background-image:url("img/BackgroundLogin5.png"); 
 background-repeat:no-repeat;
@@ -272,7 +272,7 @@ background-size:cover;
 overflow: hidden;
 }
     
-.masterLogin {
+.master-login {
 width: 460px;
 height: 575px;
 background: rgb(255, 255, 255);
@@ -283,7 +283,7 @@ margin:auto;
 border-radius: 10px;
 }
 
-.backgroundLogin {
+.background-login {
 padding: 0px 62.5px 20px 62.5px;
 }
 
@@ -331,7 +331,7 @@ width: 70%;
 
 /*Select Country*/ 
 
-#screenSelectCountry{
+#screen-select-country{
 justify-content:space-around;
 justify-content: flex-start; 
 margin-left: 30%;
@@ -408,7 +408,7 @@ padding: 10px;
 
 /*Show Grafic and tables*/
 
-.titletypeindicator {
+.title-type-indicator {
   font-family: 'Open Sans', sans-serif;
   font-style: regular;
   font-size: 27px;
@@ -418,7 +418,7 @@ padding: 10px;
 /*Show Grafic and tables*/
 
 
-.contSelect {
+.contselect {
 height: 15%;
 font-size: 23px;
 }
@@ -448,7 +448,7 @@ font-size: 23px;
 text-align: center;
 }
 
-#ScreenResult {
+#screenresult {
   width: 60%;
   margin:10px 10%;
 }
@@ -466,13 +466,13 @@ text-align: center;
   }
 
 /*LOGIN*/
-.bodyLogin {
+.body-login {
     display:flex;
     justify-content:center;
     align-items:center;
     }
 
-.backgroundLogin {
+.backgroundL-login {
 display:flex;
 width: 335px;
 height: 502px;
@@ -481,7 +481,7 @@ justify-content:center;
 flex-direction: column;
     }
     
-.AllLogo {
+.all-logo {
 display: flex;
 width: 221.15px;
 height:136px;
@@ -491,14 +491,14 @@ justify-content:center;
 flex-direction: column;
 }
 
-.Logo {
+.logo {
 width: 104px;
 height: 89px;
 margin:auto;
 object-fit: cover;
 }
 
-#Login {
+#login {
 width: 221.15px;
 height: 60px;
 font-family: 'Open Sans', sans-serif;
@@ -547,7 +547,7 @@ text-align: center;
 font-weight: 600;
 }
 
-.buttonLogin {
+.buttonlogin {
   width: 335px;
   height: 50px;
   left: 20px;
@@ -686,7 +686,7 @@ font-style: regular;
 color: #FFF;
 }
 
-.contSelect {
+.contselect {
   background-color: rgba(237, 241, 245, 0.589);
   color: rgb(18, 55, 97);
   text-align: center;
@@ -753,7 +753,7 @@ overflow: hidden;
 
 /*Presentation Peru*/
   
-  #presentationPER slider{
+  #presentationper slider{
     display: block;
     background-image: url(img/Peru5.jpg);
     background-repeat:no-repeat;
@@ -763,7 +763,7 @@ overflow: hidden;
     position: absolute;
   }
 
-  #presentationPER slider slide:nth-child(1){
+  #presentationper slider slide:nth-child(1){
   left: 0%;
   animation-delay: 0s;
   background-image: url(img/Peru1.jpeg);
@@ -775,7 +775,7 @@ overflow: hidden;
   align-items:flex-end;
   }
   
-  #presentationPER slider slide:nth-child(2){
+  #presentationper slider slide:nth-child(2){
   left: 0%;
   animation-delay: -5s;
   background-image: url(img/Peru2.jpeg);
@@ -787,7 +787,7 @@ overflow: hidden;
   align-items:flex-end;
   }
   
-  #presentationPER slider slide:nth-child(3){
+  #presentationper slider slide:nth-child(3){
   left: 0%;
   animation-delay: -10s;
   background-image: url(img/Peru3.jpg);
@@ -799,7 +799,7 @@ overflow: hidden;
   align-items:flex-end;
   }
   
-  #presentationPER slider slide:nth-child(4){
+  #presentationper slider slide:nth-child(4){
   left: 0%;
   animation-delay: -15s;
   background-image: url(img/Peru4.jpg);
@@ -815,7 +815,7 @@ overflow: hidden;
 
 /*Presentacion CHL*/
 
-#presentationCHL slider{
+#presentationchl slider{
   display: block;
   background-image: url(img/Peru5.jpg);
   background-repeat:no-repeat;
@@ -825,7 +825,7 @@ overflow: hidden;
   position: absolute;
 }
 
-#presentationCHL slider slide:nth-child(1){
+#presentationchl slider slide:nth-child(1){
 left: 0%;
 animation-delay: 0s;
 background-image: url(img/Peru1.jpeg);
@@ -837,7 +837,7 @@ justify-content: left;
 align-items:flex-end;
 }
 
-#presentationCHL slider slide:nth-child(2){
+#presentationchl slider slide:nth-child(2){
 left: 0%;
 animation-delay: -5s;
 background-image: url(img/Peru2.jpeg);
@@ -849,7 +849,7 @@ justify-content: left;
 align-items:flex-end;
 }
 
-#presentationCHL slider slide:nth-child(3){
+#presentationchl slider slide:nth-child(3){
 left: 0%;
 animation-delay: -10s;
 background-image: url(img/Peru3.jpg);
@@ -861,7 +861,7 @@ justify-content: left;
 align-items:flex-end;
 }
 
-#presentationCHL slider slide:nth-child(4){
+#presentationchl slider slide:nth-child(4){
 left: 0%;
 animation-delay: -15s;
 background-image: url(img/Peru4.jpg);
@@ -877,7 +877,7 @@ align-items:flex-end;
 
 /*Presentacion MEX*/
 
-#presentationMEX slider{
+#presentationmex slider{
   display: block;
   background-image: url(img/Peru5.jpg);
   background-repeat:no-repeat;
@@ -887,7 +887,7 @@ align-items:flex-end;
   position: absolute;
 }
 
-#presentationMEX slider slide:nth-child(1){
+#presentationmex slider slide:nth-child(1){
 left: 0%;
 animation-delay: 0s;
 background-image: url(img/Peru1.jpeg);
@@ -899,7 +899,7 @@ justify-content: left;
 align-items:flex-end;
 }
 
-#presentationMEX slider slide:nth-child(2){
+#presentationmex slider slide:nth-child(2){
 left: 0%;
 animation-delay: -5s;
 background-image: url(img/Peru2.jpeg);
@@ -911,7 +911,7 @@ justify-content: left;
 align-items:flex-end;
 }
 
-#presentationMEX slider slide:nth-child(3){
+#presentationmex slider slide:nth-child(3){
 left: 0%;
 animation-delay: -10s;
 background-image: url(img/Peru3.jpg);
@@ -923,7 +923,7 @@ justify-content: left;
 align-items:flex-end;
 }
 
-#presentationMEX slider slide:nth-child(4){
+#presentationmex slider slide:nth-child(4){
 left: 0%;
 animation-delay: -15s;
 background-image: url(img/Peru4.jpg);
@@ -938,7 +938,7 @@ align-items:flex-end;
 /*Presentacion MEX*/
 /*Presentacion BRA*/
 
-#presentationBRA slider{
+#presentationbra slider{
   display: block;
   background-image: url(img/Peru5.jpg);
   background-repeat:no-repeat;
@@ -948,7 +948,7 @@ align-items:flex-end;
   position: absolute;
 }
 
-#presentationBRA slider slide:nth-child(1){
+#presentationbra slider slide:nth-child(1){
 left: 0%;
 animation-delay: 0s;
 background-image: url(img/Peru1.jpeg);
@@ -960,7 +960,7 @@ justify-content: left;
 align-items:flex-end;
 }
 
-#presentationBRA slider slide:nth-child(2){
+#presentationbra slider slide:nth-child(2){
 left: 0%;
 animation-delay: -5s;
 background-image: url(img/Peru2.jpeg);
@@ -972,7 +972,7 @@ justify-content: left;
 align-items:flex-end;
 }
 
-#presentationBRA slider slide:nth-child(3){
+#presentationbra slider slide:nth-child(3){
 left: 0%;
 animation-delay: -10s;
 background-image: url(img/Peru3.jpg);
@@ -984,7 +984,7 @@ justify-content: left;
 align-items:flex-end;
 }
 
-#presentationBRA slider slide:nth-child(4){
+#presentationbra slider slide:nth-child(4){
 left: 0%;
 animation-delay: -15s;
 background-image: url(img/Peru4.jpg);
@@ -1065,7 +1065,7 @@ padding: 10px;
   padding: 10px;
   font-family: 'Open Sans', sans-serif;
 }
-#info-colum{
+.info-colum{
   background-size: cover;
   width: 20%;
   height: 30%;

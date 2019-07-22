@@ -1,29 +1,27 @@
+/* Graficos */
+google.charts.load('current', { packages: ['corechart', 'line'] });
+google.charts.load('current', { 'packages': ['table'] });
 /* Manejo del DOM */
 /* Acá va tu código */
-let screenLogin = document.getElementById('botonLogin');
-let screenSelectCountry = document.getElementById('screenSelectCountry');
-let screenpresentationPER = document.getElementById('presentationPER');
-let screenpresentationCHL = document.getElementById('presentationCHL');
-let screenpresentationMEX = document.getElementById('presentationMEX');
-let screenpresentationBRA = document.getElementById('presentationBRA');
-let screencountry = document.getElementById('screencountry');
-let screenchart = document.getElementById('chart');
-let screenResult = document.getElementById('ScreenResult');
-let screenNot = document.getElementById('not');
+const screenLogin = document.getElementById('boton-login');
+const screenSelectCountry = document.getElementById('screen-select-country');
+const screenpresentationPER = document.getElementById('presentationper');
+const screenpresentationCHL = document.getElementById('presentationchl');
+const screenpresentationMEX = document.getElementById('presentationmex');
+const screenpresentationBRA = document.getElementById('presentationbra');
+const screencountry = document.getElementById('screencountry');
+const screenchart = document.getElementById('chart');
+const screenResult = document.getElementById('screenresult');
+const screenNot = document.getElementById('not');
 /* Login */
-let EnterLogin = document.getElementById('EnterLogin');
-let user = document.getElementById('user');
-let password = document.getElementById('password');
-let enter = document.getElementById('password');
+const EnterLogin = document.getElementById('enterlogin');
+const user = document.getElementById('user');
+const password = document.getElementById('password');
+const enter = document.getElementById('password');
 /* Seleccionar paises */
 const elementUlCountry = document.getElementById('pais');
 
 /* Data de indicadores por pais */
-let SearchIndexCodePeru = WORLDBANK.PER.indicators;
-let SearchIndexCodeMexico = WORLDBANK.MEX.indicators;
-let SearchIndexCodeBrasil = WORLDBANK.BRA.indicators;
-let SearchIndexCodeChile = WORLDBANK.CHL.indicators;
-
 const hideallscreens = () => {
   screenLogin.classList.remove('show');
   screenSelectCountry.classList.remove('show');
@@ -51,8 +49,8 @@ const showscreenenterLogin = () => {
   hideallscreens();
   screenSelectCountry.classList.add('show');
   document.getElementById('body').classList.add('bodySelectCountry');
-  document.getElementById('body').classList.remove('bodyLogin');
-  document.getElementById('Head').classList.remove('hide');
+  document.getElementById('body').classList.remove('body-login');
+  document.getElementById('head').classList.remove('hide');
   screenNot.classList.remove('hide');
   screenNot.classList.add('show');
 };
@@ -101,7 +99,7 @@ enter.addEventListener('keyup', (event) => {
     // Cancel the default action, if needed
     event.preventDefault();
     // Trigger the button element with a click
-    document.getElementById('EnterLogin').click();
+    document.getElementById('enterlogin').click();
   }
 });
 /* LOGIN */
@@ -113,7 +111,7 @@ EnterLogin.addEventListener('click', () => {
   } else {
     user.value = '';
     password.value = '';
-    document.getElementById('mistakeLogin').innerHTML = 'Usuario o contraseña incorrectos';
+    document.getElementById('mistakelogin').innerHTML = 'Usuario o contraseña incorrectos';
   }
 });
 
@@ -135,19 +133,19 @@ document.body.addEventListener('click', (event) => {
   if (event.target.tagName !== 'INPUT') {
     if (event.target.tagName === 'LI') {
       if (tipoIndicador !== '') {
-        document.getElementById('listSL').innerHTML = '';
-        document.getElementById('listHD').innerHTML = '';
-        document.getElementById('listSG').innerHTML = '';
-        document.getElementById('listSE').innerHTML = '';
-        document.getElementById('listSP').innerHTML = '';
-        document.getElementById('listIC').innerHTML = '';
-        document.getElementById('listSH').innerHTML = '';
-        document.getElementById('listper').innerHTML = '';
-        document.getElementById('listMS').innerHTML = '';
+        document.getElementById('listsl').innerHTML = '';
+        document.getElementById('listhd').innerHTML = '';
+        document.getElementById('listsg').innerHTML = '';
+        document.getElementById('listse').innerHTML = '';
+        document.getElementById('listsp').innerHTML = '';
+        document.getElementById('listic').innerHTML = '';
+        document.getElementById('listsh').innerHTML = '';
+        document.getElementById('listpro').innerHTML = '';
+        document.getElementById('listms').innerHTML = '';
       }
       tipoIndicador = '';
       pais = event.target.id;
-      console.log(pais);
+      pais = pais.toUpperCase();
       hideallscreens();
       document.getElementById('cont').classList.remove('newcont');
       document.getElementById('cont').classList.add('cont');
@@ -170,7 +168,7 @@ document.body.addEventListener('click', (event) => {
       console.log(tipoIndicador);
     } if (pais !== '') {
       console.log(pais);
-      const indicadoresPorPaisyTipo = createdatanew(WORLDBANK, pais, tipoIndicador);
+      const indicadoresPorPaisyTipo = createdatanew(WORLDBANK, pais, tipoIndicador.toUpperCase());
       console.log(indicadoresPorPaisyTipo);
       if (tipoIndicador.length === 2 || tipoIndicador.length === 3) {
         const idElementoLi = `list${tipoIndicador}`;
@@ -181,13 +179,14 @@ document.body.addEventListener('click', (event) => {
         const idElementoLi = tipoIndicador;
         const dataDeCodigoIndicador = createdatanew(WORLDBANK, pais, idElementoLi);
         const createDataForTablas = dataDeCodigoIndicador[0].data;
+        console.log(createDataForTablas);
         const indicatorName = dataDeCodigoIndicador[0].indicatorName;
         console.log(indicatorName);
         const newdata = CreateArray(createDataForTablas);
         console.log(newdata);
         showscreenResult();
         createGrafic(newdata, indicatorName);
-        drawBasic2(newdata, newdata[0][0], newdata[newdata.length - 1][0]);
+        drawBasic2(dataInGrafic(newdata, newdata[0][0], newdata[newdata.length - 1][0]));
         /*   document.getElementById('cont').classList.remove('cont');
         document.getElementById('cont').classList.add('newcont');*/
         showscreenResult();
@@ -199,7 +198,7 @@ document.body.addEventListener('click', (event) => {
 
 
 let createGrafic = (newdata, indicatorName) => {
-  document.getElementById('indicatorName').innerHTML = indicatorName;
+  document.getElementById('indicatorname').innerHTML = indicatorName;
   let multirange = document.getElementById('multirange');
   multirange.innerHTML = `<div class='multi-range' data-lbound='${newdata[0][0]}' data-ubound='${newdata[newdata.length - 1][0]}' id="rango">
    <hr/>
@@ -232,11 +231,62 @@ let createGrafic = (newdata, indicatorName) => {
     if (uboun === 0) {
       max = document.getElementById('ubound').value;
     }
-    drawBasic2(newdata, min, max); drawTable(newdata, min, max); drawTableorder(newdata, min, max);
+    drawBasic2(dataInGrafic(newdata, min, max)); drawTable(dataInTable(newdata, min, max)); drawTableorder(dataInTableOrder(newdata, min, max));
   });
   document.getElementById('cont').classList.remove('cont');
   document.getElementById('cont').classList.add('newcont');
   showscreenResult();
   screenchart.classList.add('show');
   screencountry.classList.add('show');
+};
+
+let drawBasic2 = (datafilter) => {
+  var data = new google.visualization.DataTable();
+  data.addColumn('number', 'X');
+  data.addColumn('number', '% o escala');
+  data.addRows(datafilter);
+
+  var options = {
+    hAxis: {
+      title: 'Year'
+    },
+    vAxis: {
+      title: 'Indicator'
+    }
+  };
+
+  var chartnormal = new google.visualization.LineChart(document.getElementById('chart'));
+
+  chartnormal.draw(data, options);
+};
+
+let drawTable = (datafilter) => {
+  var data = new google.visualization.DataTable();
+  data.addColumn('number', 'año');
+  data.addColumn('number', 'porcentaje');
+  data.addRows(datafilter);
+
+  var table = new google.visualization.Table(document.getElementById('tablediv'));
+
+  table.draw(data, {
+    showRowNumber: true,
+    width: '100%',
+    height: '100%'
+  });
+};
+
+
+let drawTableorder = (inmatrizorder) => {
+  var data = new google.visualization.DataTable();
+  data.addColumn('number', 'año');
+  data.addColumn('number', 'porcentaje');
+  data.addRows(inmatrizorder);
+
+  var table = new google.visualization.Table(document.getElementById('tabledivorderasc'));
+
+  table.draw(data, {
+    showRowNumber: true,
+    width: '100%',
+    height: '100%'
+  });
 };
