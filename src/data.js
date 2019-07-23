@@ -37,30 +37,43 @@ const dataInGrafic = (data1, min, max) => {
   return datafilter;
 };
 
-let dataInTable = (data1, min, max) => {
+const dataInTable = (data1, min, max) => {
   let datafilter = data1.filter(datanew => (datanew[0] >= min && datanew[0] <= max));
   console.log(datafilter);
   return datafilter;
 };
 
+const sortfunction = (order1, order2) => {
+  if (order1[1] === order2[1]) {
+    return 0;
+  } else {
+    return (order1[1] < order2[1]) ? -1 : 1;
+  }
+};
 
-let dataInTableOrder = (data1, min, max) => {
+const dataInTableOrder = (data1, min, max) => {
   let datafilter = data1.filter(datanew => (datanew[0] >= min && datanew[0] <= max));
   let inmatrizorder = datafilter;
-
-  let sortfunction = (order1, order2) => {
-    if (order1[1] === order2[1]) {
-      return 0;
-    } else {
-      return (order1[1] < order2[1]) ? -1 : 1;
-    }
-  };
   inmatrizorder.sort(sortfunction);
   return inmatrizorder;
 };
 
+const prom = (newdata) => {
+  const cant = newdata.length;
+  let sum = 0;
+
+  for (let i = 0; i < cant; i++) {
+    sum = sum + newdata[i][1];
+  };
+  
+  let promedio = (sum / cant) ;
+  promedio = promedio.toFixed(2);
+  return promedio;
+};
+
 
 window.createdatanew = createdatanew;
+window.sortfunction = sortfunction;
 window.CreateArray = CreateArray;
 window.getIndicatorsForCountry = getIndicatorsForCountry;
 window.dataInGrafic = dataInGrafic;

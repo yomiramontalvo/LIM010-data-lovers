@@ -61,7 +61,7 @@ padding: 70px 0px 0px;
 
 }
 .contenedor-bm{
-  font-size: 20px;
+  font-size: 15px;
 }
 
 
@@ -84,10 +84,9 @@ padding: 70px 0px 0px;
   .datos {
   
     font-size: 30px; }
-    .info-colum{
+.info-colum{
 
-    width: 300px;
-    height: 200px;
+width: 44%;
 }
 
 
@@ -184,8 +183,9 @@ font-size: 14px; /* */
 /*Show grafic*/
 .contselect {
   height: 20%; /**/
-  font-size: 15px; /**/
-  }
+  font-size: 20px; /**/
+  font-weight:bold;  
+}
 
 /*Presentation Peru*/
 
@@ -217,7 +217,32 @@ text-align: center;
 width: 100%;
 margin:10px 10%;
 }
+/*footer*/
+.footer .foot{
+  font-size: 15px;
+   padding: 5px 10px;
+}
+/*footer*/
+.multi-range::after { 
+  content: attr(data-lbound) ' - ' attr(data-ubound); 
+  position: absolute; top: 0; left: 100%; white-space: nowrap;
+  display: block; padding: 0px 4px; margin: -1px 2px;
+  height: 26px; width: auto; border: 1px solid #ddd; 
+  font-size: 13px; line-height: 26px; font-weight: bold;
+  color: #28395B;
+}
 
+.multi-range {
+  width: 55%;
+}
+
+.indicatorname {
+  font-size: 15px;
+}
+
+.prom {
+  font-size: 13px;
+}
 }
 
 
@@ -302,7 +327,7 @@ padding: 70px 0px 0px;
 }    
 #banner .contenedor{
   font-size: 20px;
-  padding: 15px;
+  padding: 15px 10%;
 }
 .info{
   display: flex;
@@ -310,7 +335,7 @@ padding: 70px 0px 0px;
   margin-top: -90px;
 }
 .info-colum{
-  width: 48%;
+  width: 22%;
 }
 
 .pais{
@@ -322,10 +347,15 @@ padding: 70px 0px 0px;
 }
 
 .info-descrip{
-font-size: 15px;
+font-size: 14px;
 width: 70%;
 
 }
+
+.info-bm {
+  font-size: 20px;
+}
+
 
 /*Screen Noticias*/
 
@@ -420,7 +450,8 @@ padding: 10px;
 
 .contselect {
 height: 15%;
-font-size: 23px;
+font-size: 28px;
+font-weight: bold;
 }
 
 
@@ -453,6 +484,32 @@ text-align: center;
   margin:10px 10%;
 }
 
+/*footer*/
+.footer .foot{
+  font-size: 25px;
+   padding: 5px 20px;
+}
+/*footer*/
+
+.multi-range::after { 
+  content: attr(data-lbound) ' - ' attr(data-ubound); 
+  position: absolute; top: 0; left: 100%; white-space: nowrap;
+  display: block; padding: 0px 4px; margin: -1px 2px;
+  height: 26px; width: auto; border: 1px solid #ddd; 
+  font-size: 20px; line-height: 26px; font-weight: bold;
+  color: #28395B;
+}
+.multi-range {
+  width: 70%;
+}
+
+.indicatorname {
+  font-size: 27px;
+}
+
+.prom {
+  font-size: 20px;
+}
 
 }
 
@@ -529,8 +586,6 @@ font-style: normal;
 font-weight: normal;
 font-size: 16px;
 line-height: 25px;
-display: flex;
-align-items: center;
 color: #000000;    
 }
 
@@ -584,11 +639,12 @@ color: #28395B;
 font-family: 'Open Sans', sans-serif;
 font-weight: 900;
 }
+
+.head a{
+text-decoration: none;
+  }
+
 /*Header*/
-
-/* Screen Noticias*/
-
-/* Screen Noticias*/
 
 /*Select country*/
 .bodySelectCountry {
@@ -690,8 +746,8 @@ color: #FFF;
   background-color: rgba(237, 241, 245, 0.589);
   color: rgb(18, 55, 97);
   text-align: center;
-  width: 60%;
-  margin: 10px 19%;
+  width: 80%;
+  margin: 10px 10%;
   font-family: 'Open Sans', sans-serif;
   display: flex;
   justify-content: center;
@@ -1000,7 +1056,7 @@ align-items:flex-end;
 
 .multi-range, .multi-range * { box-sizing: border-box; padding: 0; margin: 0; }
 .multi-range { 
-    position: relative; width: 160px; height: 28px; margin: 16px;
+    position: relative; width: 75%; height: 28px; margin: 6px;
     border: 1px solid #ddd; font-family: monospace;
 }
 .multi-range > hr { position: absolute; width: 100%; top: 50%; }
@@ -1015,17 +1071,10 @@ align-items:flex-end;
 .multi-range > input[type=range]::-moz-range-track { -webkit-appearance: none; height: 0px; }
 .multi-range > input[type=range]::-ms-thumb { transform: translateY(-18px); }
 .multi-range > input[type=range]::-ms-track { -webkit-appearance: none; height: 0px; }
-.multi-range::after { 
-    content: attr(data-lbound) ' - ' attr(data-ubound); 
-    position: absolute; top: 0; left: 100%; white-space: nowrap;
-    display: block; padding: 0px 4px; margin: -1px 2px;
-    height: 26px; width: auto; border: 1px solid #ddd; 
-    font-size: 13px; line-height: 26px;
-}
 
 #banner{
   width: 100%;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   position: relative;
   }
 
@@ -1039,7 +1088,7 @@ align-items:flex-end;
   }
 
 .contenedor-bm{
-background: rgba(0, 0, 0, 0.5);
+background: rgba(0, 0, 0, 0.69);
 padding: 10px;
 }
   
@@ -1062,21 +1111,20 @@ padding: 10px;
   text-align: center;
   font-size: 40px;
   color: #0071BC;
-  padding: 10px;
+  padding: 5px 45%;
   font-family: 'Open Sans', sans-serif;
 }
 .info-colum{
   background-size: cover;
-  width: 20%;
-  height: 30%;
-  margin: 20px;
+ /* height: 30%;*/
+  margin: 10px;
   box-sizing: border-box;
   border-radius: 3px;
   color: #fff;
   padding: 0px;
   font-weight: bolder;
   font-family: 'Open Sans',sans-serif;
-  width: 35%;
+ /* width: 35%;*/
 }
 
 .info-colum1{
@@ -1098,9 +1146,8 @@ padding: 10px;
 }
 
 .info-descrip{
- 
   color: #fff;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.521);
   height: 90%;
   font-family: 'Open Sans', sans-serif;
   padding: 10px;
@@ -1117,7 +1164,7 @@ margin: -10px;
 }}*/
 .link{
   display: block;
-    width:  100px;
+    width:  50%;
     color: #fff;
     text-decoration: none;
     padding: 7px;
@@ -1135,7 +1182,7 @@ margin: -10px;
       flex-direction: row;
       justify-content: space-around;
       flex-flow: wrap;
-      margin-bottom: 50px;
+      margin-bottom: 3%;
     }
 
 
@@ -1201,16 +1248,41 @@ margin: -10px;
 
 .footer{
   background: #0071BC;
-  opacity: 0.5;
+  opacity: 0.8;
   color: #fff;
-  padding: 10px;
   text-align: end;
 }
 .footer .foot{
   display: inline-block;
   color: #fff;
   text-decoration: none;
-  font-size: 30px;
-  padding: 10px;
-  line-height: 40px;
+  font-size: 25px;
+   padding: 5px 20px;
+}
+
+#mistakelogin{
+  color: red;
+  text-align: center;
+  font-family: 'open sans';
+  font-weight: bold;
+}
+
+.indicatorname {
+  background: rgba(255, 255, 255, 0.418);
+  width: 97.5%;
+  margin:10px;
+  text-align: center;
+  font-family: 'open sans';
+  font-weight: bold;
+  color: #333333;
+}
+
+.tableyprom {
+  text-align: center;
+  /*margin:10px;
+  width: 97.5%;*/
+  background: rgba(250, 251, 252, 0.432);
+  font-family: 'open sans';
+  font-weight: bold;
+  color: #28395B;
 }

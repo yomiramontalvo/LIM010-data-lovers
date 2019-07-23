@@ -10,7 +10,7 @@
 <!--HEADER-->
   <header id="head" class="hide">
    <section class="order">
-    <div class="head" >Latin Data</div>
+    <div  id="quienessomos" class="head" href="#"><a>Latin Data</a></div>
     <img class="logo-head" src="img/Logo.png" alt="imagen logotipo"/>
   </section>  
     <section id="screen-select-country" class="hide">
@@ -23,6 +23,7 @@
               <li id="bra">Brasil</li>
             </ul>
           </div>  
+   
     </section>
    </header>
     <!---ScreenLogin--> 
@@ -41,12 +42,12 @@
             <h2 class="user">Contraseña</h2>
             <input class="writeuser" type="password" id="password">
           </section>
+          <p id="mistakelogin" class="error"></p>
           <section class="buttonentry">
             <input class="buttonlogin" type="button" value="INGRESAR" id="enterlogin">
           </section>
           <!-- <a href="">¿Olvidaste Contraseña?</a></br>
           <a href="">¿No tienes una cuenta?<strong> Registrate</strong></a><br/></a><br/>-->
-          <p id="mistakelogin" class="error"></p>
         </form>
       </section>
     </section>
@@ -57,7 +58,7 @@
     <div class="contenedor">
       <div class="contenedor-bm">
         <h1> Banco Mundial</h1>
-        <p class="info-bm"> Los datos y las investigaciones sirven para establecer prioridades,
+        <p class="info-bm"> Los datos y las investigaciones sirven para establecer prioridades, 
           intercambiar conocimientos acerca de las medidas que funcionan y medir los avances conseguidos.</p>
         <a href="https://www.bancomundial.org/">Leer más</a>
       </div>
@@ -110,8 +111,8 @@
 
     <div>
       <div class="mision">
-        <h2>Nuestra misión </h2>
-        <h3>Brindarte una excelente experiencia al buscar los indicadores solicitados</h3>
+        <h2>Nuestra misión </h2><br>
+        <h3>Organizar la información de países Latinoamericanos para que todos puedan acceder a ella, entenderla y usarla</h3>
       </div>
       <div id="dat">
         <h1 class="dato">Empieza la busqueda</h1>
@@ -132,7 +133,7 @@
     <div id="cont" class="cont">
       <div  id="presentationper" class="sli hide">
      <section class="contselect" >
-        <p>Conoce el flujo de los Indicadores de Perú al seleccionar un indicador</p>
+        <h>Conoce el flujo de los Indicadores de Perú al seleccionar un indicador</h>
     </section>
         <slider>
           <slide><div class="contentancla"><a href="https://peru21.pe/peru/promperu-peru-recibe-cuatro-premios-world-travel-awards-sudamerica-2019-490140" target="_blank" class="ancla">Perú recibe cuatro premios en los World Travel Awards Sudamérica 2019</a></div>
@@ -231,12 +232,13 @@
 
   </section>
   <section id="screenresult" class="hide">
-      <div>
-        <h id="indicatorname"></h>
-      </div><br/>
-      <div id="multirange"></div>
+      <div class="indicatorname" ><h id="indicatorname"></h></div><br>
+      <div id="multirange" class="multirange"></div>
       <div id="chart"></div><br>
-      <div id="tablediv"></div><br>
+      <div class="tableyprom">
+      <div id="prom" class="prom"></div><br>
+      <div id="tablediv" class="tablediv"></div><br>
+    </div>
       <div id="tabledivorderasc"></div>
       <div id="orderchartdiv"></div>
       <div id="prom"></div>
@@ -248,7 +250,10 @@
   <!--  </section>-->
 
   </main>
-  <footer></footer>
+  <footer id="footer" class="footer hide">
+    <a class="foot" href="https://github.com/thanet0109">&copy; Fiorella</a>&<a class="foot"
+     href="https://github.com/yomiramontalvo">Yomira</a>
+  </footer>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="./data/worldbank/worldbank.js"></script>
   <script src="data.js"></script>

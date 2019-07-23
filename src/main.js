@@ -13,6 +13,8 @@ const screencountry = document.getElementById('screencountry');
 const screenchart = document.getElementById('chart');
 const screenResult = document.getElementById('screenresult');
 const screenNot = document.getElementById('not');
+const footer = document.getElementById('footer');
+const Screenquienessomos = document.getElementById('quienessomos');
 /* Login */
 const EnterLogin = document.getElementById('enterlogin');
 const user = document.getElementById('user');
@@ -53,6 +55,8 @@ const showscreenenterLogin = () => {
   document.getElementById('head').classList.remove('hide');
   screenNot.classList.remove('hide');
   screenNot.classList.add('show');
+  footer.classList.remove('hide');
+  footer.classList.add('show');
 };
 
 const showscreenLogin = () => {
@@ -113,6 +117,10 @@ EnterLogin.addEventListener('click', () => {
     password.value = '';
     document.getElementById('mistakelogin').innerHTML = 'Usuario o contraseña incorrectos';
   }
+});
+
+Screenquienessomos.addEventListener('click', () => {
+  showscreenenterLogin();
 });
 
 /* Funcion que pinta la lista de indicadores en HTML dinamicamente*/
@@ -184,9 +192,13 @@ document.body.addEventListener('click', (event) => {
         console.log(indicatorName);
         const newdata = CreateArray(createDataForTablas);
         console.log(newdata);
+        document.getElementById('tabledivorderasc').innerHTML = '';
+        document.getElementById('prom').innerHTML = '';
         showscreenResult();
         createGrafic(newdata, indicatorName);
         drawBasic2(dataInGrafic(newdata, newdata[0][0], newdata[newdata.length - 1][0]));
+        drawTable(dataInTable(newdata, newdata[0][0], newdata[newdata.length - 1][0]));
+        document.getElementById('prom').innerHTML = `El promedio es: ${prom(newdata)}`;
         /*   document.getElementById('cont').classList.remove('cont');
         document.getElementById('cont').classList.add('newcont');*/
         showscreenResult();
@@ -248,10 +260,10 @@ let drawBasic2 = (datafilter) => {
 
   var options = {
     hAxis: {
-      title: 'Year'
+      title: 'Año'
     },
     vAxis: {
-      title: 'Indicator'
+      title: '% de indicador'
     }
   };
 
@@ -263,15 +275,15 @@ let drawBasic2 = (datafilter) => {
 let drawTable = (datafilter) => {
   var data = new google.visualization.DataTable();
   data.addColumn('number', 'año');
-  data.addColumn('number', 'porcentaje');
+  data.addColumn('number', '% indicador');
   data.addRows(datafilter);
 
   var table = new google.visualization.Table(document.getElementById('tablediv'));
 
   table.draw(data, {
-    showRowNumber: true,
-    width: '100%',
-    height: '100%'
+    showRowNumber: false,
+    width: '58%',
+    height: '50%'
   });
 };
 
@@ -279,14 +291,14 @@ let drawTable = (datafilter) => {
 let drawTableorder = (inmatrizorder) => {
   var data = new google.visualization.DataTable();
   data.addColumn('number', 'año');
-  data.addColumn('number', 'porcentaje');
+  data.addColumn('number', '% indicador');
   data.addRows(inmatrizorder);
 
   var table = new google.visualization.Table(document.getElementById('tabledivorderasc'));
 
   table.draw(data, {
-    showRowNumber: true,
-    width: '100%',
-    height: '100%'
+    showRowNumber: false,
+    width: '58%',
+    height: '50%'
   });
 };
