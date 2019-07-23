@@ -71,7 +71,7 @@ const prom = (data1, min, max) => {
   return promedio;
 };
 
-
+window.prom = prom;
 window.createdatanew = createdatanew;
 window.sortfunction = sortfunction;
 window.CreateArray = CreateArray;
