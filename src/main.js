@@ -245,7 +245,7 @@ let createGrafic = (newdata, indicatorName) => {
     }
     document.getElementById('prom').innerHTML = '';
     document.getElementById('prom').innerHTML = `El porcentaje promedio es: ${prom(newdata, min, max)}`;
-    drawBasic2(dataInGrafic(newdata, min, max)); drawTable(dataInTable(newdata, min, max)); /* drawTableorder(dataInTableOrder(newdata, min, max));*/
+    drawBasic2(dataInGrafic(newdata, min, max)); drawTable(dataInTable(newdata, min, max)); drawTableorder(dataInTableOrder(newdata, min, max));
   });
   document.getElementById('cont').classList.remove('cont');
   document.getElementById('cont').classList.add('newcont');
