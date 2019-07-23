@@ -198,7 +198,7 @@ document.body.addEventListener('click', (event) => {
         createGrafic(newdata, indicatorName);
         drawBasic2(dataInGrafic(newdata, newdata[0][0], newdata[newdata.length - 1][0]));
         drawTable(dataInTable(newdata, newdata[0][0], newdata[newdata.length - 1][0]));
-        document.getElementById('prom').innerHTML = `El promedio es: ${prom(newdata)}`;
+        document.getElementById('prom').innerHTML = `El porcentaje promedio es: ${prom(newdata, newdata[0][0], newdata[newdata.length - 1][0])}`;
         /*   document.getElementById('cont').classList.remove('cont');
         document.getElementById('cont').classList.add('newcont');*/
         showscreenResult();
@@ -243,7 +243,9 @@ let createGrafic = (newdata, indicatorName) => {
     if (uboun === 0) {
       max = document.getElementById('ubound').value;
     }
-    drawBasic2(dataInGrafic(newdata, min, max)); drawTable(dataInTable(newdata, min, max)); drawTableorder(dataInTableOrder(newdata, min, max));
+    document.getElementById('prom').innerHTML = '';
+    document.getElementById('prom').innerHTML = `El porcentaje promedio es: ${prom(newdata, min, max)}`;
+    drawBasic2(dataInGrafic(newdata, min, max)); drawTable(dataInTable(newdata, min, max)); /* drawTableorder(dataInTableOrder(newdata, min, max));*/
   });
   document.getElementById('cont').classList.remove('cont');
   document.getElementById('cont').classList.add('newcont');

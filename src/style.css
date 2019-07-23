@@ -245,7 +245,23 @@ margin:10px 10%;
 }
 }
 
-
+#ordertable{
+  margin:5px;
+  display:flex;
+  justify-content:center;    
+  }
+  
+  #ordertable ul{
+  width: 80%; 
+  list-style: none;
+  }
+  
+  
+  #ordertable ul li{
+  font-size:15px;
+  background-color: #0071BC;
+  width: 70px;
+  }
 
 
 @media screen and (min-width:1200px ){
@@ -510,6 +526,20 @@ text-align: center;
 .prom {
   font-size: 20px;
 }
+
+#ordertable{
+  width: 100%;  
+  }
+      
+  #ordertable ul{
+  width:500px;
+  }
+  
+  #ordertable ul li{
+  font-size:20px;
+  font-weight: 600;
+  width: 170px;
+  }
 
 }
 
@@ -1285,4 +1315,31 @@ margin: -10px;
   font-family: 'open sans';
   font-weight: bold;
   color: #28395B;
+}
+
+#ordertable ul li{
+  font-family: 'Open Sans', sans-serif;
+  background-color: #0071BC;
+  text-align: center;
+  padding: 5px;
+  padding-bottom: 5px;
+  border-radius: 20px;
+  box-shadow: 5px 0px 10px #939393;
+  -webkit-transition:all 500ms ease;
+  -o-transition:all 500ms ease;
+  transition: all 500ms ease;
+  color:white;
+  margin: auto;
+  }
+  
+  #ordertable ul{
+    display:inline;
+    display:flex;
+    justify-content:space-around;
+    }
+  
+#ordertable ul li:hover /* dar el efecto hover, de boton*/
+  {
+background: rgb(111, 232, 238);
+border-radius: 100px; /*para dar el efecto de borde*/
 }

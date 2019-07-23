@@ -58,12 +58,12 @@ const dataInTableOrder = (data1, min, max) => {
   return inmatrizorder;
 };
 
-const prom = (newdata) => {
-  const cant = newdata.length;
+const prom = (data1, min, max) => {
+  let datafilter = data1.filter(newdata => (newdata[0] >= min && newdata[0] <= max));
+  const cant = datafilter.length;
   let sum = 0;
-
   for (let i = 0; i < cant; i++) {
-    sum = sum + newdata[i][1];
+    sum = sum + datafilter[i][1];
   };
   
   let promedio = (sum / cant) ;
