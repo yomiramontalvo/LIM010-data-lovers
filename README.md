@@ -50,7 +50,7 @@ Observando esta situación se planificó el proyecto "Latin Data" que se desarro
 
 ## Imagen y link del prototipo en Figma
 
-A través del siguiente Link se podrá obtener el figma de las Historias de Usuario planteadas.  https://www.figma.com/file/5RWdlRj8dgGPSW0tP6CL7Z/LatinData?node-id=1%3A2
+A través del siguiente Link se podrá obtener el figma de las Historias de Usuario planteadas.  https://www.figma.com/file/eEgDuL4cbCJMbdN7TrvhrTPi/Latin-Data?node-id=0%3A1
 
                   Prototipo en baja fidelidad ( Web )
 
