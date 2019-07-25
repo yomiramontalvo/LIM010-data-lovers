@@ -17,7 +17,7 @@
 
 # **Latin Data**
 
-##Introducción
+## Introducción
 
 En pleno siglo XXI la información acerca de datos e indicadores de páginas Web y/o aplicaciones no cuenta con el valor necesario.
 Conforme a ello se realizó un estudio en el cual se observó que existen escasos medios que brindan información de datos e indicadores. El Banco Mundial cumple con esta función, sin embargo su trasfondo tiene como objetivo combatir la pobreza extrema ayudando a países que necesiten concretar proyectos para beneficiar a un conjunto de personas.
