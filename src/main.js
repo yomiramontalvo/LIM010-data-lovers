@@ -243,6 +243,13 @@ let createGrafic = (newdata, indicatorName) => {
     if (uboun === 0) {
       max = document.getElementById('ubound').value;
     }
+
+    if (min > max) {
+      let minnew = min;
+      min = max;
+      max = minnew;
+    }
+    
     document.getElementById('prom').innerHTML = '';
     document.getElementById('prom').innerHTML = `El porcentaje promedio es: ${prom(newdata, min, max)}`;
     drawBasic2(dataInGrafic(newdata, min, max)); drawTable(dataInTable(newdata, min, max)); drawTableorder(dataInTableOrder(newdata, min, max));
