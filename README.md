@@ -70,16 +70,17 @@ Este proyecto está orientado a estudiantes, analistas, ejecutivos, autoridades 
 
 ## Imagen y link del prototipo en Figma (Prototipo inicial)
 
-                            Prototipo en alta fidelidad ( Web )
+                            Prototipo en alta fidelidad 
 
 ## **Login**
 ![7](Reaimg/Login.png)
+![12](Reaimg/LoginMovil.png)
 
 ## **Pantalla "Quiénes Somos"** 
 ![8](Reaimg/Noticias.png)
-
+![13](Reaimg/NoticiasMovil.png)
 ## **Pantalla activada al seleccionar un país** 
-![9](Reaimg/Pais-indicador.png)
+![9](Reaimg/Pais-Indicador.png)
 
 
 ## **Pantalla activada al seleccionar un tipo de indicador** 
@@ -90,29 +91,41 @@ Este proyecto está orientado a estudiantes, analistas, ejecutivos, autoridades 
 ![11](Reaimg/Resultadodelindicador.png)
 
 
-
-
 A través del siguiente Link se podrá obtener el figma de las Historias de Usuario planteadas.  https://www.figma.com/file/eEgDuL4cbCJMbdN7TrvhrTPi/Latin-Data?node-id=0%3A1
-
-
-
-
-
 
 
 ## Resumen del Feedback inicial
 ![feedback](reaimg/feedback.png)
 
+## Prueba de Usabilidad
 
-                  
-                  Prototipo de Alta fidelidad ( Web )
-
-
-
-![7](Reaimg/Historia1.web.PNG)
-
-                 Prototipo de Alta fidelidad ( Movil )
-
-![8](Reaimg/Historia1.mobile.PNG)
+![14](Reaimg/resumenPruebas.png)
 
 ## Imagen final del Proyecto
+
+                            Prototipo final en Alta Fidelidad
+
+## **Login**
+
+![7](Reaimg/Login.png)
+![15](pruebas/LoginMovil.png)
+
+## **Pantalla "Quiénes Somos"** 
+
+![16](pruebas/Noticias.png)
+![17](pruebas/NoticiasMobile.png)
+
+## **Pantalla activada al seleccionar un país** 
+![18](pruebas/PaisIndicador.png)
+
+
+## **Pantalla activada al seleccionar un tipo de indicador** 
+![19](pruebas/SeleccionIndicador.png)
+
+
+## **Pantalla activada al seleccionar un indicador** 
+![20](pruebas/Resultado.png)
+
+
+A través del siguiente Link se podrá obtener el figma de las Historias de Usuario planteadas.  https://www.figma.com/file/JVEtXX4GBWx9CTADyo68f6/Latin-Data-(Copy)?node-id=103%3A238
+
