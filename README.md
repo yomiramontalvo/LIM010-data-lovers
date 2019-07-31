@@ -54,23 +54,23 @@ A través del siguiente Link se podrá obtener el figma de las Historias de Usua
 
                   Prototipo en baja fidelidad ( Web )
 
-![1](reaimg/papelylapiz1.jpg)
-![2](reaimg/papelylapiz2.jpg)
-![3](reaimg/papelylapiz3.jpg)
-![4](reaimg/papelylapiz4.jpg)
+![1](Reaimg/papelylapiz1.jpg)
+![2](Reaimg/papelylapiz2.jpg)
+![3](Reaimg/papelylapiz3.jpg)
+![4](Reaimg/papelylapiz4.jpg)
 
                   Prototipo en baja fidelidad ( Movil )
 
 
-![5](reaimg/papelylapiz5.jpg)
-![6](reaimg/papelylapiz6.jpg)
+![5](Reaimg/papelylapiz5.jpg)
+![6](Reaimg/papelylapiz6.jpg)
 
                   Prototipo de Alta fidelidad ( Web )
 
 
 
-![7](reaimg/Historia1.web.PNG)
+![7](Reaimg/Historia1.web.PNG)
 
                  Prototipo de Alta fidelidad ( Movil )
 
-![8](reaimg/Historia1.mobile.PNG)
+![8](Reaimg/Historia1.mobile.PNG)
