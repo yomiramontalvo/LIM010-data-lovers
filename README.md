@@ -56,16 +56,16 @@ Este proyecto está orientado a estudiantes, analistas, ejecutivos, autoridades 
 
                            Prototipo en baja fidelidad ( Web )
 
-![1](reaimg/papelylapiz1.jpg)
-![2](reaimg/papelylapiz2.jpg)
-![3](reaimg/papelylapiz3.jpg)
-![4](reaimg/papelylapiz4.jpg)
+![1](Reaimg/papelylapiz1.jpg)
+![2](Reaimg/papelylapiz2.jpg)
+![3](Reaimg/papelylapiz3.jpg)
+![4](Reaimg/papelylapiz4.jpg)
 
                            Prototipo en baja fidelidad ( Movil )
 
 
-![5](reaimg/papelylapiz5.jpg)
-![6](reaimg/papelylapiz6.jpg)
+![5](Reaimg/papelylapiz5.jpg)
+![6](Reaimg/papelylapiz6.jpg)
 
 
 ## Imagen y link del prototipo en Figma (Prototipo inicial)
@@ -73,21 +73,21 @@ Este proyecto está orientado a estudiantes, analistas, ejecutivos, autoridades 
                             Prototipo en alta fidelidad ( Web )
 
 ## **Login**
-![7](reaimg/Login.png)
+![7](Reaimg/Login.png)
 
 ## **Pantalla "Quiénes Somos"** 
-![8](reaimg/Noticias.png)
+![8](Reaimg/Noticias.png)
 
 ## **Pantalla activada al seleccionar un país** 
-![9](reaimg/Pais-indicador.png)
+![9](Reaimg/Pais-indicador.png)
 
 
 ## **Pantalla activada al seleccionar un tipo de indicador** 
-![10](reaimg/SelecciondeIndicador.png)
+![10](Reaimg/SelecciondeIndicador.png)
 
 
 ## **Pantalla activada al seleccionar un indicador** 
-![11](reaimg/Resultadodelindicador.png)
+![11](Reaimg/Resultadodelindicador.png)
 
 
 
