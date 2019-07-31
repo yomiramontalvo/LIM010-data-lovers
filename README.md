@@ -30,41 +30,81 @@ Sin embargo, se entiende que el usuario requiere información más precisar, por
 El proyecto “Latin Data” busca facilitar el acceso a datos e indicadores de países Latinoamericanos  con la finalidad de hacer más eficiente la búsquedad del usuario.
 El ingreso a esta plataforma se realizará a través del usuario y contraseña “LABORATORIA”.
 
+### Problema que resuelve
 
-## Imagen final del Proyecto
+Diariamente se requieren de datos para conocimiento, análisis y toma de decisiones, lo cual usualmente son buscados en Google u otras plataformas. Sin embargo los datos encontrados no siempre pueden ser filtrados, seleccionados y ordenados lo que hace más complicada la obtención de esta información, por ello se desarrolla la plataforma “Latin Data” con la finalidad de facilitar el acceso a datos que incluyen indicadores demográficos, económicos y comerciales de los países Latinoamericanos como Perú, México, Chile y Brasil.
+Observando esta situación se planificó el proyecto "Latin Data" que se desarrolla ante la problemática de inaccesibilidad inmediata y rápida de datos que incluyen indicadores de ciertos países Latinoamericanos como lo son Perú, México, Chile y Brasil.
 
 ## Investigación UX
 
+### **Necesidades:**
+
+1. Visualización de datos estadísticos de fuente confiable, de forma ordenada ascendentemente o descendentemente según año y tipo de indicador, filtrado de resultados según año además visualizar una tendencia promedio del indicador para un determinado país.
+
+2. El producto debe funcionar para todos los posibles casos, es decir, que aplique para cualquier País seleccionado y cualquier indicador seleccionado.
+
+3. Debe ser de fácil acceso para todos, se debe poder retroceder o avanzar.
+
+4. Debe tener un diseño agradable, que organice correctamente la información.
+
+
 ### Usuario y objetivo en Relación al Producto
 
-Este proyecto va orientado a estudiantes, analistas, ejecutivos y/o profesionales de cualquier especialidad, que requieran obtener información para conocimiento, análisis y tomar decisiones respecto a indicadores económicos, demográficos y comerciales de países Latinoamericanos como México, Perú, Brasil y Chile.
+Este proyecto está orientado a estudiantes, analistas, ejecutivos, autoridades públicas y/o profesionales de cualquier especialidad, que requieran de datos de buena calidad para fijar niveles de referencia, identificar medidas públicas y privadas eficaces, determinar objetivos y metas, supervisar avances y evaluar efectos. Además, la información representa una herramienta fundamental para una buena gestión, puesto que es un medio para que las personas evalúen la labor del gobierno y puedan participar directamente en el proceso de desarrollo.
 
-### Problema y Necesidades que resuelve
+### Diseño del Prototipo
 
-Diariamente se requieren de datos para conocimiento, análisis y toma de decisiones: lo cual usualmente son buscados en Google u otras plataformas. Sin embargo los datos encontrados no siempre pueden ser filtrados, seleccionados y ordenados lo que hace más complicada la obtención de esta información, por ello se desarrolla la plataforma “Latin Data” con la finalidad de facilitar el acceso a datos que incluyen indicadores demográficos, económicos y comerciales de los países Latinoamericanos como Perú, México, Chile y Brasil.
-Observando esta situación se planificó el proyecto "Latin Data" que se desarrolla ante la problemática de inaccesibilidad inmediata y rápida de datos que incluyen indicadores de ciertos países Latinoamericanos como lo son Perú, México, Chile y Brasil.
+                           Prototipo en baja fidelidad ( Web )
+
+![1](reaimg/papelylapiz1.jpg)
+![2](reaimg/papelylapiz2.jpg)
+![3](reaimg/papelylapiz3.jpg)
+![4](reaimg/papelylapiz4.jpg)
+
+                           Prototipo en baja fidelidad ( Movil )
 
 
-## Resumen del Feedback
-![feedback](reaimg/feedback.png)
+![5](reaimg/papelylapiz5.jpg)
+![6](reaimg/papelylapiz6.jpg)
 
-## Imagen y link del prototipo en Figma
+
+## Imagen y link del prototipo en Figma (Prototipo inicial)
+
+                            Prototipo en alta fidelidad ( Web )
+
+## **Login**
+![7](reaimg/Login.png)
+
+## **Pantalla "Quiénes Somos"** 
+![8](reaimg/Noticias.png)
+
+## **Pantalla activada al seleccionar un país** 
+![9](reaimg/Pais-indicador.png)
+
+
+## **Pantalla activada al seleccionar un tipo de indicador** 
+![10](reaimg/SelecciondeIndicador.png)
+
+
+## **Pantalla activada al seleccionar un indicador** 
+![11](reaimg/Resultadodelindicador.png)
+
+
+
 
 A través del siguiente Link se podrá obtener el figma de las Historias de Usuario planteadas.  https://www.figma.com/file/eEgDuL4cbCJMbdN7TrvhrTPi/Latin-Data?node-id=0%3A1
 
-                  Prototipo en baja fidelidad ( Web )
-
-![1](Reaimg/papelylapiz1.jpg)
-![2](Reaimg/papelylapiz2.jpg)
-![3](Reaimg/papelylapiz3.jpg)
-![4](Reaimg/papelylapiz4.jpg)
-
-                  Prototipo en baja fidelidad ( Movil )
 
 
-![5](Reaimg/papelylapiz5.jpg)
-![6](Reaimg/papelylapiz6.jpg)
 
+
+
+
+## Resumen del Feedback inicial
+![feedback](reaimg/feedback.png)
+
+
+                  
                   Prototipo de Alta fidelidad ( Web )
 
 
@@ -74,3 +114,5 @@ A través del siguiente Link se podrá obtener el figma de las Historias de Usua
                  Prototipo de Alta fidelidad ( Movil )
 
 ![8](Reaimg/Historia1.mobile.PNG)
+
+## Imagen final del Proyecto
