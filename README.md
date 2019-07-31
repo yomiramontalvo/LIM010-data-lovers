@@ -101,6 +101,9 @@ A través del siguiente Link se podrá obtener el figma de las Historias de Usua
 
 ![pruebas](pruebas/pruebaultimo.png)
 
+Con el siguiente enlace puede visualizar la matriz de pruebas:
+https://docs.google.com/spreadsheets/d/1x4xFn8iCa2HZpBJ5Z7UODlxk2kj6z2DP91m5YthLaqk/edit?usp=sharing 
+
 ## Imagen final del Proyecto
 
                             Prototipo final en Alta Fidelidad
