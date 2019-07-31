@@ -95,7 +95,7 @@ A través del siguiente Link se podrá obtener el figma de las Historias de Usua
 
 
 ## Resumen del Feedback inicial
-![feedback](reaimg/feedback.png)
+![feedback](Reaimg/feedback.png)
 
 ## Prueba de Usabilidad
 
