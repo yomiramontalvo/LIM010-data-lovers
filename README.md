@@ -99,7 +99,7 @@ A través del siguiente Link se podrá obtener el figma de las Historias de Usua
 
 ## Prueba de Usabilidad
 
-![21](Reaimg/pruebaultimo.png)
+![pruebas](pruebas/pruebaultimo.png)
 
 ## Imagen final del Proyecto
 
